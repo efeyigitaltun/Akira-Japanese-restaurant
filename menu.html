@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikari Ryōtei - Menü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body class="menu-page">
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">ANA SAYFA</a></li>
+        <li><a href="index.html#about" class="nav-link">HAKKIMIZDA</a></li>
+        <li><a href="index.html#contact" class="nav-link">CONTACT</a></li>
+        <li><a href="menu.html" class="nav-link">MENU</a></li>
+    </ul>
+
+    <a href="index.html" class="logo">
+        <span class="logo-kanji">料亭</span>
+        <span class="logo-text">RYŌTEI ZEN</span>
+    </a>
+
+    <div class="nav-right">
+    
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Ara...">
+        <button class="search-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+
+    <div class="social-links">
+        <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        <a href="#" target="_blank" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+        <a href="#" target="_blank" class="social-icon" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+</nav>
+<section class="menu-section">
+    <div class="menu-header">
+        <span class="menu-subtitle">JAPONYA'NIN TÜM LEZZETLERİ TEK MASADA</span>
+        <h1 class="menu-title">GELENEKSEL MUTFAĞIMIZ</h1>
+    </div>
+
+    <div class="menu-filters">
+        <button class="filter-btn active">HEPSİ</button>
+        <button class="filter-btn">🍱 SUSHI & SASHIMI</button>
+        <button class="filter-btn">🍜 RAMEN & ERİŞTE</button>
+        <button class="filter-btn">🍤 TEMPURA</button>
+    </div>
+
+    <div class="menu-grid">
+            <div class="menu-item full-width-style"> <div class="item-inner">
+        <div class="item-img-wrapper">
+            <img src="images/sushi-platter.jpg" alt="Zengin Sushi Tabağı" class="placeholder-img">
+        </div>
+        <div class="item-text-wrapper"> <div class="item-front">
+                <h3 class="item-name">SUSHI PLATTER</h3>
+                <span class="item-price">$23</span>
+            </div>
+            <div class="item-details">
+                <p>Mavi yüzgeçli orkinos, somon ve taze deniz kestanesi içeren, mevsimlik nigiri ve maki rulolarından oluşan özel bir seçki.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-item full-width-style">
+    <div class="item-inner">
+        <div class="item-img-wrapper">
+            <img src="images/tonkotsu-ramen.jpg" alt="Tonkotsu Ramen" class="placeholder-img">
+        </div>
+        <div class="item-text-wrapper">
+            <div class="item-front">
+                <h3 class="item-name">TONKOTSU RAMEN</h3>
+                <span class="item-price">$20</span>
+            </div>
+            <div class="item-details">
+                <p>24 saat kaynatılmış yoğun domuz kemiği suyu, ince ramen erişteleri, chashu eti, ağaç kulağı mantarı ve ajitama yumurtası ile.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="menu-item full-width-style">
+    <div class="item-inner">
+        <div class="item-img-wrapper">
+            <img src="images/shrimp-tempura.jpg" alt="Shrimp Tempura" class="placeholder-img">
+        </div>
+        <div class="item-text-wrapper">
+            <div class="item-front">
+                <h3 class="item-name">SHRIMP TEMPURA</h3>
+                <span class="item-price">$18</span>
+            </div>
+            <div class="item-details">
+                <p>Hafif ve çıtır Japon usulü panelenmiş dev kaplan karidesleri. Yanında rendelenmiş daikon ve özel tentsuyu sosu ile servis edilir.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="menu-item full-width-style">
+    <div class="item-inner">
+        <div class="item-img-wrapper">
+            <img src="images/udon-soup.jpg" alt="Udon Noodle Soup" class="placeholder-img">
+        </div>
+        <div class="item-text-wrapper">
+            <div class="item-front">
+                <h3 class="item-name">UDON NOODLE SOUP</h3>
+                <span class="item-price">$16</span>
+            </div>
+            <div class="item-details">
+                <p>Kalın buğday erişteleri, geleneksel dashi suyu, taze soğan, kamaboko balık keki ve çıtır tempura parçacıkları ile sıcak servis edilir.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+       
+        
+
+</section>
+
+</body>
+</html>

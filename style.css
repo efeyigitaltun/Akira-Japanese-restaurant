@@ -1,0 +1,624 @@
+/* ═══════════════════════════════════════════════
+   1. GENEL AYARLAR VE RENKLER
+═══════════════════════════════════════════════ */
+:root {
+    --cream:     #FFE7D5;
+    --ink:       #171717;
+    --gray:      #4D4D4D;
+    --crimson:   #A91110;
+    --white:     #ffffff;
+}
+
+html {
+    scroll-behavior: smooth; /* Sayfa içi linklere yumuşak kayma */
+}
+
+/* ANA SAYFA İÇİN ARKA PLAN (Resimli) */
+body {
+    margin: 0;
+    font-family: 'Inria Serif', serif;
+    background-color: var(--cream);
+    background-image: 
+      linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
+      url("BackgroundImages/J1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* MENÜ SAYFASI İÇİN ARKA PLAN (J2.png Resimli) */
+body.menu-page {
+    margin: 0;
+    font-family: 'Inria Serif', serif;
+    background-color: var(--cream);
+    background-image: 
+      linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
+      url("BackgroundImages/J1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ═══════════════════════════════════════════════
+   2. NAVBAR (ORTAK) - CAM EFEKTLİ
+═══════════════════════════════════════════════ */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 48px;
+    background: rgba(255, 255, 255, 0.05); /* Şeffaf beyazımsı doku */
+    backdrop-filter: blur(8px); /* Buzlu cam */
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(169, 17, 16, 0.15);
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    text-decoration: none;
+    font-family: 'Bayon', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: color 0.25s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--crimson);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--crimson);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
+    transform: translateX(-50%) scale(1.02);
+}
+
+.logo-kanji {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: var(--crimson);
+    opacity: 0.7;
+}
+
+.logo-text {
+    font-family: 'Inria Serif', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: 'Inria Serif', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+.nav-phone:hover {
+    color: var(--crimson);
+}
+
+.nav-phone svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+    stroke: var(--gray);
+}
+
+.nav-phone:hover svg {
+    stroke: var(--crimson);
+    transform: rotate(15deg) scale(1.1);
+}
+
+.nav-reserve {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: 'Bayon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 10px 24px;
+    background: var(--crimson);
+    color: var(--white);
+    border: 1px solid var(--crimson);
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+
+.nav-reserve svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
+}
+
+.nav-reserve:hover {
+    background: transparent;
+    color: var(--crimson);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(169, 17, 16, 0.15);
+}
+
+.nav-reserve:hover svg {
+    transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════
+   3. ANA SAYFA KISMI (HERO & TICKER)
+═══════════════════════════════════════════════ */
+.hero-section {
+    padding-top: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+    min-height: 80vh; 
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 2; 
+}
+
+.hero-subtitle {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: 'Bayon', sans-serif; 
+    color: var(--ink);
+    font-size: 64px;
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-description {
+    font-family: 'Inria Serif', serif;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    text-decoration: none;
+    font-family: 'Bayon', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    padding: 14px 32px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--crimson);
+    color: var(--white);
+    border: 2px solid var(--crimson);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--crimson);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink); /* Görünür olması için kenarlık rengi eklendi */
+}
+
+.btn-secondary:hover {
+    color: var(--crimson);
+    border-color: var(--crimson);
+}
+
+.hero-image-container {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: -50px; 
+}
+
+.hero-plate {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.ticker-wrapper {
+    width: 100%;
+    background-color: var(--ink); 
+    overflow: hidden;
+    padding: 15px 0;
+    position: relative;
+    z-index: 10;
+    border-top: 3px solid var(--crimson); 
+    border-bottom: 3px solid var(--crimson);
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scrollTicker 30s linear infinite;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-family: 'Bayon', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    padding: 0 40px; 
+    white-space: nowrap;
+}
+
+.ticker-icon { font-size: 20px; }
+
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* ═══════════════════════════════════════════════
+   4. MENÜ SAYFASI (Genişleyen Kartlar)
+═══════════════════════════════════════════════ */
+.menu-section {
+    padding: 140px 5% 80px 5%; /* Navbardan kurtulmak için üst boşluk */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-header { margin-bottom: 40px; }
+
+.menu-subtitle {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu-title {
+    font-family: 'Bayon', sans-serif;
+    color: var(--ink);
+    font-size: 48px;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--gray);
+    color: var(--ink);
+    padding: 8px 20px;
+    font-family: 'Bayon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--crimson);
+    color: var(--white);
+    border-color: var(--crimson);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* YEMEK KARTLARI */
+.menu-item {
+    width: 100%;
+    max-width: 350px;
+    height: 400px; /* Standart yükseklik */
+    perspective: 1000px;
+}
+
+.item-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #F8EBE1; /* Daha açık, krem/şeftali arası bir ton */
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+/* Hover olduğunda kart uzar ve gölgesi artar */
+.menu-item:hover .item-inner {
+    height: 480px; 
+    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.15);
+    transform: translateY(-10px);
+}
+
+.item-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+/* Hover olduğunda isim ve resim yukarı kayar */
+.menu-item:hover .item-front {
+    transform: translateY(-15px);
+}
+
+.item-name {
+    font-family: 'Bayon', sans-serif;
+    font-size: 24px;
+    color: var(--ink);
+    margin: 0 0 5px 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.item-price {
+    font-family: 'Bayon', sans-serif;
+    font-size: 20px;
+    color: var(--crimson);
+    margin-bottom: 20px;
+}
+
+.item-img-wrapper {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+
+/* Resim hoverda hafif küçülüp döner */
+.menu-item:hover .item-img-wrapper {
+    transform: scale(0.9) rotate(5deg);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* YEMEK AÇIKLAMASI (Gizli kısım) */
+.item-details {
+    position: absolute;
+    bottom: -100px; /* Aşağıda gizli */
+    left: 0;
+    width: 100%;
+    padding: 0 25px 30px 25px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover olduğunda açıklama yukarı çıkar ve görünür olur */
+.menu-item:hover .item-details {
+    bottom: 0;
+    opacity: 1;
+}
+
+.item-details p {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   İyileştirilmiş Arama Barı & Sosyal Medya
+═══════════════════════════════════════════════ */
+
+/* --- Arama Barı --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 36px;
+    background: transparent; /* Başlangıçta saydam */
+    border-radius: 30px; /* Şık hap görünümü */
+    padding: 0 5px 0 15px; /* İkon ve metin boşlukları */
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Üzerine gelince belirginleşen hap şekli */
+.search-container:hover,
+.search-container:focus-within {
+    background: rgba(255, 231, 213, 0.4); /* Krem renginin şeffaf hali */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Inria Serif', serif;
+    font-size: 13px;
+    color: var(--ink);
+    padding: 0;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: var(--gray);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Genişleme animasyonu */
+.search-container:hover .search-input,
+.search-input:focus {
+    width: 130px;
+    opacity: 1;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition: color 0.3s ease;
+}
+
+.search-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.search-container:hover .search-btn,
+.search-input:focus + .search-btn {
+    color: var(--crimson); /* Üzerine gelince ikon kırmızı olur */
+}
+
+/* --- Sosyal Medya İkonları --- */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* İkonlar arası boşluk */
+    margin-left: 10px; /* Arama barı ile arasına mesafe */
+    border-left: 1px solid rgba(23, 23, 23, 0.15); /* Araya zarif bir ayırıcı çizgi koyduk */
+    padding-left: 24px;
+}
+
+.social-icon {
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.social-icon:hover {
+    color: var(--crimson);
+    transform: translateY(-2px); /* Üzerine gelince ikonlar hafif havaya kalkar */
+}

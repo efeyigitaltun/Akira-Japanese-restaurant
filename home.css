@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════
+   GENEL AYARLAR (BODY)
+═══════════════════════════════════════════════ */
+body.home-page {
+    margin: 0;
+    /* Ana arka plan resmi */
+    background-image: 
+      linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
+      url("BackgroundImages/J1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.hero-section {
+    padding-top: 150px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+    min-height: 85vh; 
+}
+
+.hero-title {
+    font-family: 'Bayon', sans-serif; 
+    font-size: 64px;
+    color: var(--ink); 
+    margin: 0 0 24px 0; 
+    text-transform: uppercase;
+}
+
+.hero-description { 
+    max-width: 600px; 
+    line-height: 1.6; 
+    margin-bottom: 40px; 
+    color: var(--ink); 
+    font-family: 'Inria Serif', serif;
+}
+
+.hero-buttons { display: flex; gap: 20px; }
+.btn-primary, .btn-secondary {
+    text-decoration: none; 
+    font-family: 'Bayon', sans-serif;
+    padding: 14px 32px; 
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
+.btn-primary { background: var(--crimson); color: white; border: 2px solid var(--crimson); }
+.btn-primary:hover { background: transparent; color: var(--crimson); }
+.btn-secondary { border: 2px solid var(--ink); color: var(--ink); }
+
+/* ═══════════════════════════════════════════════
+   HAKKIMIZDA - SIFIR TON FARKI & PARALLAX
+═══════════════════════════════════════════════ */
+.about-section {
+    position: relative;
+    padding: 120px 8%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    
+    /* GÜNCELLEME: TON FARKI FİKSLEME */
+    /* Hero ile birebir aynı renk katmanı */
+   background-image: 
+      linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
+      url("BackgroundImages/J1.png");
+    background-size: cover;
+    background-attachment: fixed; /* Parallax devam ediyor */
+    z-index: 1;
+}
+
+/* Sol: Ayrı Duran Reklam Panosu (Chef Board) */
+.chef-board {
+    flex: 0 0 400px;
+    background: #FFE7D5; /* Pano rengini krem yapalım, açık arka planda dursun */
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: rotate(-1.5deg); /* Pano gibi asılı durma efekti */
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.chef-board:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.chef-image-box {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chef-img { width: 100%; height: 100%; object-fit: cover; }
+
+.chef-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: var(--crimson);
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Bayon', sans-serif;
+}
+
+.chef-name-tag {
+    padding: 15px 5px 5px 5px;
+    font-family: 'Bayon', sans-serif;
+    color: var(--ink);
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+/* METİN İÇERİĞİ (Artık Arka Plan Açık Olduğu İçin Yazıları Koyu Yapıyoruz) */
+.about-text-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-tag {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    letter-spacing: 0.3em;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.about-title {
+    font-family: 'Bayon', sans-serif;
+    font-size: 56px;
+    color: var(--ink); /* Koyu renk yapıldı */
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.about-description {
+    font-family: 'Inria Serif', serif;
+    font-size: 19px;
+    color: var(--gray); /* Koyu renk yapıldı */
+    line-height: 1.8;
+    opacity: 0.95;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.chef-signature {
+    border-left: 4px solid var(--crimson);
+    padding-left: 25px;
+}
+
+.signature-text { 
+    font-family: 'Inria Serif', serif; 
+    font-size: 26px; 
+    font-weight: 700; 
+    display: block; 
+    color: var(--ink); /* Koyu renk yapıldı */
+}
+
+.signature-sub { 
+    font-family: 'Bayon', sans-serif; 
+    color: var(--crimson); 
+    font-size: 14px; 
+}

@@ -1,0 +1,270 @@
+/* ═══════════════════════════════════════════════
+   1. ARKA PLAN VE GENEL SAYFA YAPISI
+═══════════════════════════════════════════════ */
+body.menu-page {
+    background-image: 
+      linear-gradient(rgba(240, 235, 224, 0.65), rgba(240, 235, 224, 0.65)),
+      url("BackgroundImages/J1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.menu-section {
+    padding: 140px 5% 80px 5%;
+    max-width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-header {
+    margin-bottom: 50px;
+}
+
+.menu-subtitle {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.menu-title {
+    font-family: 'Bayon', sans-serif;
+    color: var(--ink);
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   2. FİLTRE BUTONLARI
+═══════════════════════════════════════════════ */
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 70px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(77, 77, 77, 0.3);
+    color: var(--ink);
+    padding: 10px 24px;
+    font-family: 'Bayon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background: var(--crimson);
+    color: var(--white);
+    border-color: var(--crimson);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(169, 17, 16, 0.2);
+}
+
+/* ═══════════════════════════════════════════════
+   3. YEMEK GRİDİ (ORTAK)
+═══════════════════════════════════════════════ */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    align-items: start;
+}
+
+/* ═══════════════════════════════════════════════
+   4. KARE RESİMLİ STİL (full-width-style) - YENİ FAVORİN
+═══════════════════════════════════════════════ */
+.menu-item.full-width-style {
+    width: 100%;
+    max-width: 380px;
+    height: auto; /* İçerik büyüdükçe genişlesin */
+}
+
+.full-width-style .item-inner {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    /* TAKILMA ÇÖZÜMÜ */
+    will-change: transform, box-shadow;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.full-width-style:hover .item-inner {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(169, 17, 16, 0.15);
+}
+
+/* Resim Alanı (Sabit ve Kare) */
+.full-width-style .item-img-wrapper {
+    width: 100%;
+    height: 250px;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.full-width-style .placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* RESİM SABİT: Hareket yok */
+    transition: none !important;
+    transform: none !important;
+}
+
+/* Metin Alanı */
+.full-width-style .item-text-wrapper {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.full-width-style .item-name {
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.full-width-style .item-price {
+    font-size: 18px;
+    align-self: flex-start;
+    margin-bottom: 0;
+}
+
+/* Detaylar (Aşağı Doğru Pürüzsüz Açılan) */
+.full-width-style .item-details {
+    position: static; /* Kartın akışına dahil */
+    max-height: 0;
+    opacity: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease, 
+                padding 0.4s ease;
+}
+
+.full-width-style:hover .item-details {
+    max-height: 150px;
+    opacity: 1;
+    padding-bottom: 25px; /* Alt boşluğu genişleyince veriyoruz */
+}
+
+/* ═══════════════════════════════════════════════
+   5. DAİRESEL RESİMLİ STİL (STANDART) - YEDEK
+═══════════════════════════════════════════════ */
+.menu-item:not(.full-width-style) {
+    width: 100%;
+    max-width: 350px;
+    height: 420px;
+    perspective: 1000px;
+}
+
+.menu-item:not(.full-width-style) .item-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #FFE7D5;
+    border-radius: 24px;
+    padding: 35px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+}
+
+.menu-item:not(.full-width-style):hover .item-inner {
+    height: 520px;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(169, 17, 16, 0.18);
+    z-index: 10;
+}
+
+/* Daire Resim Alanı */
+.menu-item:not(.full-width-style) .item-img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid var(--white);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.menu-item:not(.full-width-style):hover .item-img-wrapper {
+    transform: scale(0.8) rotate(3deg);
+}
+
+/* Daire Stilinde Detaylar (Absolute) */
+.menu-item:not(.full-width-style) .item-details {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease 0.1s;
+}
+
+.menu-item:not(.full-width-style):hover .item-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════
+   6. ORTAK METİN VE RESİM AYARLARI
+═══════════════════════════════════════════════ */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-name {
+    font-family: 'Bayon', sans-serif;
+    color: var(--ink);
+}
+
+.item-price {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    background: rgba(169, 17, 16, 0.08);
+    padding: 2px 12px;
+    border-radius: 20px;
+}
+
+.item-details p {
+    font-family: 'Inria Serif', serif;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
