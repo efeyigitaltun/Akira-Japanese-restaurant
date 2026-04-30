@@ -11,25 +11,28 @@
 <body class="home-page">
 
     <nav>
+        <!-- SOL: Desktop linkleri -->
         <ul class="nav-links">
             <li><a href="index.html" class="nav-link active">ANA SAYFA</a></li>
             <li><a href="index.html#about" class="nav-link">HAKKIMIZDA</a></li>
-            <li><a href="index.html#contact" class="nav-link">CONTACT</a></li>
-            <li><a href="menu.html" class="nav-link">MENU</a></li>
+            <li><a href="index.html#contact" class="nav-link">İLETİŞİM</a></li>
+            <li><a href="menu.html" class="nav-link">MENÜ</a></li>
         </ul>
 
+        <!-- ORTA: Logo -->
         <a href="index.html" class="logo">
             <span class="logo-kanji">料亭</span>
             <span class="logo-text">RYŌTEI ZEN</span>
         </a>
 
+        <!-- SAĞ: Arama + Sosyal -->
         <div class="nav-right">
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Ara...">
                 <button class="search-btn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </button>
             </div>
@@ -54,24 +57,55 @@
                 </a>
             </div>
         </div>
+
+        <!-- MOBİL: Hamburger butonu -->
+        <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
+    <!-- MOBİL MENÜ OVERLAY -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">ANA SAYFA</a>
+        <a href="index.html#about" class="mobile-nav-link">HAKKIMIZDA</a>
+        <a href="index.html#contact" class="mobile-nav-link">İLETİŞİM</a>
+        <a href="menu.html" class="mobile-nav-link">MENÜ</a>
+        <div class="mobile-social">
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- HERO -->
     <section class="hero-section">
-        <div class="hero-content">
-            <span class="hero-subtitle">AUTHENTIC TRADITIONAL JAPANESE DINING</span>
+        <div class="hero-content fade-in">
+            <span class="hero-subtitle" style="font-family:'Bayon', sans-serif; letter-spacing: 0.15em; color:var(--crimson); font-size:14px;">AUTHENTIC TRADITIONAL JAPANESE DINING</span>
             <h1 class="hero-title">EXPERIENCE THE ART<br>OF JAPANESE DINING</h1>
             <p class="hero-description">
                 A sanctuary of Japanese tradition. From humble ochazuke to grand kaiseki — every dish tells the story of a thousand years.
             </p>
             <div class="hero-buttons">
-                <a href="#" class="btn-primary">RESERVE A TABLE</a>
-                <a href="menu.html" class="btn-secondary">EXPLORE MENU</a>
+                <a href="#contact" class="btn-primary">REZERVASYON</a>
+                <a href="menu.html" class="btn-secondary">MENÜYÜ İNCELE</a>
             </div>
         </div>
     </section>
 
+    <!-- HAKKIMIZDA -->
     <section id="about" class="about-section">
-        <div class="chef-board">
+        <div class="chef-board fade-in">
             <div class="chef-image-box">
                 <img src="images/chef.jpg" alt="Executive Chef" class="chef-img">
                 <div class="chef-badge">MASTER CHEF</div>
@@ -81,12 +115,12 @@
             </div>
         </div>
 
-        <div class="about-text-content">
+        <div class="about-text-content fade-in delay-2">
             <span class="about-tag">GELENEĞİN İZİNDE</span>
             <h2 class="about-title">BİR MUTFAK <br> FELSEFESİ</h2>
             <p class="about-description">
-                "Mükemmellik küçük detayların toplamıdır, ancak mükemmellik bir detay değildir." 
-                Şefimiz Kenji, Marcus Aurelius'un disiplinini ve Japon mutfağının sadeliğini 
+                "Mükemmellik küçük detayların toplamıdır, ancak mükemmellik bir detay değildir."
+                Şefimiz Kenji, Marcus Aurelius'un disiplinini ve Japon mutfağının sadeliğini
                 her tabakta birleştiriyor.
             </p>
             <div class="chef-signature">
@@ -95,6 +129,196 @@
             </div>
         </div>
     </section>
+
+    <!-- ÖNE ÇIKAN LEZZETLER -->
+    <section id="featured" class="featured-section">
+        <div class="featured-header fade-in">
+            <span class="about-tag">ŞEFİN İMZASI</span>
+            <h2 class="about-title" style="margin-bottom: 10px;">ÖNE ÇIKAN LEZZETLER</h2>
+        </div>
+
+        <div class="featured-grid">
+            <div class="featured-card fade-in delay-1">
+                <div class="featured-inner">
+                    <div class="featured-img-box">
+                        <img src="images/sushi-platter.jpg" alt="Sushi Platter">
+                    </div>
+                    <div class="featured-text-wrapper">
+                        <div class="featured-front">
+                            <h3 class="featured-card-title">SUSHI PLATTER</h3>
+                            <span class="featured-card-price">$23</span>
+                        </div>
+                        <div class="featured-details">
+                            <p class="featured-card-desc">Mavi yüzgeçli orkinos, somon ve taze deniz kestanesi içeren, mevsimlik nigiri seçkisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-card fade-in delay-2">
+                <div class="featured-inner">
+                    <div class="featured-img-box">
+                        <img src="images/tonkotsu-ramen.jpg" alt="Tonkotsu Ramen">
+                    </div>
+                    <div class="featured-text-wrapper">
+                        <div class="featured-front">
+                            <h3 class="featured-card-title">TONKOTSU RAMEN</h3>
+                            <span class="featured-card-price">$20</span>
+                        </div>
+                        <div class="featured-details">
+                            <p class="featured-card-desc">24 saat kaynatılmış yoğun domuz kemiği suyu, ince ramen erişteleri ve chashu eti.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-card fade-in delay-3">
+                <div class="featured-inner">
+                    <div class="featured-img-box">
+                        <img src="images/shrimp-tempura.jpg" alt="Shrimp Tempura">
+                    </div>
+                    <div class="featured-text-wrapper">
+                        <div class="featured-front">
+                            <h3 class="featured-card-title">SHRIMP TEMPURA</h3>
+                            <span class="featured-card-price">$18</span>
+                        </div>
+                        <div class="featured-details">
+                            <p class="featured-card-desc">Hafif ve çıtır Japon usulü panelenmiş dev kaplan karidesleri, özel sosuyla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-btn-container fade-in delay-3">
+            <a href="menu.html" class="btn-secondary">TÜM MENÜYÜ İNCELE</a>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="contact" class="contact-section">
+        <div class="contact-info fade-in">
+            <span class="about-tag">BİZE ULAŞIN</span>
+            <h2 class="contact-title">REZERVASYON &<br>İLETİŞİM</h2>
+
+            <div class="contact-details">
+                <div class="contact-detail-item">
+                    <span class="detail-label">ADRES</span>
+                    <span class="detail-value">Shinjuku-ku, Tokyo<br>Japonya 〒160-0022</span>
+                </div>
+                <div class="contact-detail-item">
+                    <span class="detail-label">TELEFON</span>
+                    <span class="detail-value">+81 3-0000-0000</span>
+                </div>
+                <div class="contact-detail-item">
+                    <span class="detail-label">ÇALIŞMA SAATLERİ</span>
+                    <span class="detail-value">Salı – Pazar<br>18:00 – 23:00</span>
+                </div>
+                <div class="contact-detail-item">
+                    <span class="detail-label">E-POSTA</span>
+                    <span class="detail-value">info@ryoteizen.com</span>
+                </div>
+            </div>
+
+            <div class="contact-divider"></div>
+            <p class="contact-note">
+                Özel etkinlikler ve özel menü talepleriniz için doğrudan bizi arayınız.
+            </p>
+        </div>
+
+        <div class="contact-form-wrapper fade-in delay-2">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">AD SOYAD</label>
+                        <input type="text" class="form-input" placeholder="Kenji Takeshi" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">E-POSTA</label>
+                        <input type="email" class="form-input" placeholder="email@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">TARİH</label>
+                        <input type="date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">KİŞİ SAYISI</label>
+                        <select class="form-input form-select" required>
+                            <option value="">Seçiniz</option>
+                            <option>1 Kişi</option>
+                            <option>2 Kişi</option>
+                            <option>3–4 Kişi</option>
+                            <option>5–6 Kişi</option>
+                            <option>7+ Kişi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">MESAJINIZ</label>
+                    <textarea class="form-input form-textarea" placeholder="Özel istekleriniz, alerji bilgisi..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary form-submit">REZERVASYON TALEP ET</button>
+                <p class="form-success" id="formSuccess">Talebiniz alındı — en kısa sürede dönüş yapılacaktır.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <span class="logo-kanji" style="font-size:20px; color: var(--crimson); opacity:0.6;">料亭</span>
+        <span class="footer-text">© 2025 Ryōtei Zen — Tüm hakları saklıdır.</span>
+    </footer>
+
+    <script>
+        /* ── FORM ── */
+        function handleSubmit(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.style.opacity = '1';
+            setTimeout(() => { successMsg.style.opacity = '0'; }, 4000);
+        }
+
+        /* ── SCROLL FADE-IN ── */
+       document.addEventListener('DOMContentLoaded', function () {
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            /* ── HAMBURGERMENİ ── */
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            hamburger.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('open', isOpen);
+                // Scroll'u kilitle/aç
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            // Mobil menü linklerine tıklanınca kapat
+            mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
