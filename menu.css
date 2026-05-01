@@ -1,6 +1,74 @@
 /* ═══════════════════════════════════════════════
    1. ARKA PLAN VE GENEL SAYFA YAPISI
 ═══════════════════════════════════════════════ */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 48px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(169, 17, 16, 0.15);
+}
+
+.nav-links { display: flex; align-items: center; gap: 38px; list-style: none; margin: 0; padding: 0; }
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Bayon', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: color 0.25s ease;
+}
+
+.nav-link::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 2px; background: var(--crimson);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--crimson); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.logo {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; line-height: 1;
+}
+
+.logo-kanji { font-size: 14px; letter-spacing: 0.4em; color: var(--crimson); opacity: 0.7; }
+.logo-text { font-size: 26px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+
+.nav-right { display: flex; align-items: center; gap: 30px; }
+
+.search-container {
+    display: flex; align-items: center; position: relative;
+    height: 36px; border-radius: 30px; padding: 0 5px 0 15px;
+    transition: all 0.4s ease;
+}
+.search-container:hover, .search-container:focus-within { background: rgba(255, 231, 213, 0.4); }
+.search-input {
+    width: 0; opacity: 0; border: none; background: transparent; outline: none;
+    font-family: 'Inria Serif', serif; font-size: 13px; transition: all 0.4s ease;
+}
+.search-container:hover .search-input { width: 130px; opacity: 1; }
+.search-btn { background: none; border: none; cursor: pointer; color: var(--ink); }
+.search-btn svg { width: 16px; height: 16px; }
+
+.social-links { display: flex; align-items: center; gap: 16px; border-left: 1px solid rgba(23, 23, 23, 0.15); padding-left: 24px; }
+.social-icon { color: var(--ink); transition: all 0.3s ease; }
+.social-icon svg { width: 17px; height: 17px; }
+.social-icon:hover { color: var(--crimson); transform: translateY(-2px); }
+
+
+
 body.menu-page {
     background-image: 
       linear-gradient(rgba(240, 235, 224, 0.65), rgba(240, 235, 224, 0.65)),

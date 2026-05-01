@@ -103,8 +103,25 @@ nav {
 /* ═══════════════════════════════════════════════
    GİRİŞ (HERO) BÖLÜMÜ
 ═══════════════════════════════════════════════ */
+.hero-subtitle {
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 0.15em;
+    color: var(--crimson);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* Slider içindeki özel resim hizalamaları (Inline'dan kurtarıldı) */
+.object-bottom {
+    object-position: center bottom;
+}
+
+.object-custom {
+    object-position: 50% 65%;
+}
 .hero-section {
-    padding-top: 150px; 
+    padding-top: 90px; 
     display: flex; 
     flex-direction: column; 
     align-items: center;
@@ -142,6 +159,36 @@ nav {
 .btn-secondary { border: 2px solid var(--ink); color: var(--ink); }
 .btn-secondary:hover { background: var(--ink); color: white; }
 
+
+/* ═══════════════════════════════════════════════
+   EKLENEN: SLIDER TASARIMI
+═══════════════════════════════════════════════ */
+.slider-container {
+    width: 100%; /* Ekranda kaplayacağı yüzdelik alan */
+    max-width: 1200px; /* BURADAN AYARLAYABİLİRSİN: Genişliği artırdık (Örn: 1000px, 1200px, 1400px) */
+    margin: 50px auto 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 600px; /* BURADAN AYARLAYABİLİRSİN: Yüksekliği artırdık (Örn: 500px, 600px, 700px) */
+    object-fit: cover; /* Resmin en-boy oranını bozmadan kutuyu doldurmasını sağlar */
+    display: block;
+}
 /* ═══════════════════════════════════════════════
    HAKKIMIZDA BÖLÜMÜ
 ═══════════════════════════════════════════════ */
@@ -210,6 +257,25 @@ nav {
 /* ═══════════════════════════════════════════════
    ÖNE ÇIKAN LEZZETLER (FEATURED) - MENÜ STİLİ
 ═══════════════════════════════════════════════ */
+.featured-title {
+    margin-bottom: 10px;
+}
+
+.footer-kanji {
+    font-size: 20px; 
+    color: var(--crimson); 
+    opacity: 0.6;
+}
+
+/* Animasyonları biraz daha elit hissettirecek şekilde yumuşatma */
+.featured-inner {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.featured-card:hover .featured-inner {
+    transform: translateY(-8px); /* 10px yerine 8px daha zarif bir sıçrama sağlar */
+    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12);
+}
 .featured-section {
     position: relative;
     padding: 100px 8%;
@@ -388,3 +454,63 @@ nav {
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
+
+/* ═══════════════════════════════════════════════
+   SLIDER OK BUTONLARI
+═══════════════════════════════════════════════ */
+
+.slider-container {
+    position: relative; /* zaten var ama garantiye alıyoruz */
+}
+
+/* Genel buton */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    border: none;
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+    font-size: 26px;
+    cursor: pointer;
+
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    z-index: 20;
+    backdrop-filter: blur(4px);
+}
+
+/* Hover olduğunda görünür */
+.slider-container:hover .slider-btn {
+    opacity: 0.6;
+}
+
+.slider-btn:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Sol */
+.slider-btn.prev {
+    left: 15px;
+}
+
+/* Sağ */
+.slider-btn.next {
+    right: 15px;
+}
+.map-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
