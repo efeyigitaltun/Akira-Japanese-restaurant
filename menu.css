@@ -1,74 +1,6 @@
 /* ═══════════════════════════════════════════════
-   1. ARKA PLAN VE GENEL SAYFA YAPISI
+   1. ARKA PLAN VE BAŞLIK
 ═══════════════════════════════════════════════ */
-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-    padding: 0 48px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(169, 17, 16, 0.15);
-}
-
-.nav-links { display: flex; align-items: center; gap: 38px; list-style: none; margin: 0; padding: 0; }
-.nav-link {
-    position: relative;
-    text-decoration: none;
-    font-family: 'Bayon', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink);
-    transition: color 0.25s ease;
-}
-
-.nav-link::after {
-    content: ''; position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 2px; background: var(--crimson);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active { color: var(--crimson); }
-.nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-.logo {
-    position: absolute; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center;
-    text-decoration: none; line-height: 1;
-}
-
-.logo-kanji { font-size: 14px; letter-spacing: 0.4em; color: var(--crimson); opacity: 0.7; }
-.logo-text { font-size: 26px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
-
-.nav-right { display: flex; align-items: center; gap: 30px; }
-
-.search-container {
-    display: flex; align-items: center; position: relative;
-    height: 36px; border-radius: 30px; padding: 0 5px 0 15px;
-    transition: all 0.4s ease;
-}
-.search-container:hover, .search-container:focus-within { background: rgba(255, 231, 213, 0.4); }
-.search-input {
-    width: 0; opacity: 0; border: none; background: transparent; outline: none;
-    font-family: 'Inria Serif', serif; font-size: 13px; transition: all 0.4s ease;
-}
-.search-container:hover .search-input { width: 130px; opacity: 1; }
-.search-btn { background: none; border: none; cursor: pointer; color: var(--ink); }
-.search-btn svg { width: 16px; height: 16px; }
-
-.social-links { display: flex; align-items: center; gap: 16px; border-left: 1px solid rgba(23, 23, 23, 0.15); padding-left: 24px; }
-.social-icon { color: var(--ink); transition: all 0.3s ease; }
-.social-icon svg { width: 17px; height: 17px; }
-.social-icon:hover { color: var(--crimson); transform: translateY(-2px); }
-
-
-
 body.menu-page {
     background-image: 
       linear-gradient(rgba(240, 235, 224, 0.65), rgba(240, 235, 224, 0.65)),
@@ -141,31 +73,24 @@ body.menu-page {
 }
 
 /* ═══════════════════════════════════════════════
-   3. YEMEK GRİDİ (ORTAK)
-═══════════════════════════════════════════════ */
-/* ═══════════════════════════════════════════════
-   3. YEMEK GRİDİ (ORTAK)
+   3. YEMEK GRİDİ VE KARTLAR
 ═══════════════════════════════════════════════ */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 40px;
     justify-items: center;
-    /* Kartların alt kısımlarının eşitlenmesi için align-items: start; sildik */
 }
 
-/* ═══════════════════════════════════════════════
-   4. KARE RESİMLİ STİL (full-width-style)
-═══════════════════════════════════════════════ */
 .menu-item.full-width-style {
     width: 100%;
     max-width: 380px;
-    height: 100%; /* Tüm kartlar ızgarada aynı boya gelsin */
+    height: 100%;
 }
 
 .full-width-style .item-inner {
     width: 100%;
-    height: 100%; /* Kartın içi de tüm alanı kaplasın */
+    height: 100%;
     background-color: #ffffff;
     border-radius: 20px;
     display: flex;
@@ -176,21 +101,18 @@ body.menu-page {
     will-change: transform, box-shadow;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 .full-width-style:hover .item-inner {
-    transform: translateY(-8px); /* 8 piksel yukarı zıplatır */
-    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12); /* Gölgeyi genişletir ve kızartır */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12);
 }
 
-/* RESİMLERİN İLK BAŞTAKİ GİBİ SABİT KALMASI İÇİN */
 .full-width-style .item-img-wrapper {
     width: 100%;
     height: 250px;
-    flex: 0 0 250px; /* Büyüme ve küçülmeyi YASAKLAR, KESİN 250PX KALIR */
-    border-radius: 0;
-    border: none;
-    margin: 0;
-    box-shadow: none;
+    flex: 0 0 250px;
     overflow: hidden;
+    margin: 0;
 }
 
 .full-width-style .placeholder-img {
@@ -200,13 +122,12 @@ body.menu-page {
     display: block;
 }
 
-/* YAZI ALANININ DÜZENİ */
 .full-width-style .item-text-wrapper {
     padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    flex: 1; /* RESİMDEN KALAN TÜM BOŞLUĞU DOLDURUR */
+    flex: 1;
 }
 
 .full-width-style .item-front {
@@ -218,18 +139,23 @@ body.menu-page {
 }
 
 .full-width-style .item-name {
+    font-family: 'Bayon', sans-serif;
     font-size: 24px;
-    text-align: left;
-    margin: 0; /* Başlığın kaymasını önler */
+    color: var(--ink);
+    margin: 0;
     line-height: 1.1;
 }
 
 .full-width-style .item-price {
+    font-family: 'Bayon', sans-serif;
     font-size: 18px;
+    color: var(--crimson);
+    background: rgba(169, 17, 16, 0.08);
+    padding: 2px 12px;
+    border-radius: 20px;
     margin: 0;
 }
 
-/* DETAYLAR (AÇIKLAMA KISMI) */
 .full-width-style .item-details {
     position: static; 
     max-height: none; 
@@ -239,9 +165,16 @@ body.menu-page {
     transition: none; 
 }
 
-/* ═══════════════════════════════════════════════
-   5. DAİRESEL RESİMLİ STİL (STANDART) - YEDEK
-═══════════════════════════════════════════════ */
+.full-width-style .item-details p {
+    font-family: 'Inria Serif', serif;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* YEDEK - Dairesel Stil */
 .menu-item:not(.full-width-style) {
     width: 100%;
     max-width: 350px;
@@ -255,7 +188,6 @@ body.menu-page {
     background-color: #FFE7D5;
     border-radius: 24px;
     padding: 35px 25px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,7 +204,6 @@ body.menu-page {
     z-index: 10;
 }
 
-/* Daire Resim Alanı */
 .menu-item:not(.full-width-style) .item-img-wrapper {
     display: flex;
     align-items: center;
@@ -290,7 +221,6 @@ body.menu-page {
     transform: scale(0.8) rotate(3deg);
 }
 
-/* Daire Stilinde Detaylar (Absolute) */
 .menu-item:not(.full-width-style) .item-details {
     position: absolute;
     bottom: 30px;
@@ -308,38 +238,7 @@ body.menu-page {
 }
 
 /* ═══════════════════════════════════════════════
-   6. ORTAK METİN VE RESİM AYARLARI
-═══════════════════════════════════════════════ */
-.placeholder-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.item-name {
-    font-family: 'Bayon', sans-serif;
-    color: var(--ink);
-}
-
-.item-price {
-    font-family: 'Bayon', sans-serif;
-    color: var(--crimson);
-    background: rgba(169, 17, 16, 0.08);
-    padding: 2px 12px;
-    border-radius: 20px;
-}
-
-.item-details p {
-    font-family: 'Inria Serif', serif;
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.6;
-    margin: 0;
-    font-style: italic;
-}
-/* ═══════════════════════════════════════════════
-   FİLTRE ANİMASYONU
+   4. FİLTRE ANİMASYONU
 ═══════════════════════════════════════════════ */
 @keyframes filterFadeIn {
     from { opacity: 0; transform: translateY(16px); }
@@ -347,179 +246,87 @@ body.menu-page {
 }
 
 /* ═══════════════════════════════════════════════
-   FOOTER
+   5. MENU.CSS MOBİL UYUMLULUK
 ═══════════════════════════════════════════════ */
-.menu-footer {
-    background: var(--ink);
-    padding: 40px 8% 0 8%;
-}
-
-.menu-footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 60px;
-}
-
-.menu-footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-logo-text {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.9);
-    text-transform: uppercase;
-}
-
-.footer-brand-desc {
-    font-family: 'Inria Serif', serif;
-    font-size: 14px;
-    font-style: italic;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.7;
-    margin: 8px 0 0 0;
-}
-
-.menu-footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.footer-col-title {
-    font-family: 'Bayon', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--crimson);
-    margin-bottom: 4px;
-}
-
-.footer-link {
-    font-family: 'Inria Serif', serif;
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.25s ease;
-    line-height: 1.4;
-}
-
-a.footer-link:hover {
-    color: rgba(255,255,255,0.9);
-}
-
-.footer-socials {
-    display: flex;
-    gap: 16px;
-    margin-top: 4px;
-}
-
-.footer-social-icon {
-    color: rgba(255,255,255,0.4);
-    transition: all 0.3s ease;
-}
-
-.footer-social-icon svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-}
-
-.footer-social-icon:hover {
-    color: var(--crimson);
-    transform: translateY(-2px);
-}
-
-.menu-footer-bottom .footer-bottom-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-}
-
-.footer-bottom-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0 20px 0;
-}
-
-.footer-copy {
-    font-family: 'Bayon', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.25);
-}
-
-.footer-kanji-deco {
-    font-family: serif;
-    font-size: 28px;
-    color: rgba(169,17,16,0.3);
-    line-height: 1;
-}
-
-.footer-kanji {
-    font-size: 20px;
-    color: var(--crimson);
-    opacity: 0.7;
-}
-
-@media (max-width: 1024px) {
-    .menu-footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 600px) {
-    .menu-footer-top {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    .menu-footer {
-        padding: 50px 6% 0 6%;
-    }
-}
-
 /* ═══════════════════════════════════════════════
-   MOBİL OPTİMİZASYON - MENU.CSS (max 768px)
+   MENU.CSS MOBİL UYUMLULUK (YENİLENMİŞ ŞIK TASARIM)
 ═══════════════════════════════════════════════ */
 @media (max-width: 768px) {
-    
-    .menu-section {
-        padding-top: 100px; /* Mobilde üst boşluğu biraz azaltıyoruz */
-    }
+    .menu-section { padding-top: 90px; }
+    .menu-title { font-size: 32px; }
 
-    .menu-title {
-        font-size: 38px; /* Başlığı daraltıyoruz */
-    }
-
-    /* FİLTRE BUTONLARI */
+    /* FİLTRELERİ YATAY KAYDIRILABİLİR (SWIPE) YAPTIK */
     .menu-filters {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 12px;
         gap: 10px;
-        margin-bottom: 40px;
+        -webkit-overflow-scrolling: touch; /* iOS için pürüzsüz kaydırma */
+        scrollbar-width: none; /* Firefox için gizle */
     }
-
+    .menu-filters::-webkit-scrollbar { display: none; } /* Chrome/Safari için gizle */
+    
     .filter-btn {
-        padding: 8px 16px;
-        font-size: 12px; /* Butonları küçültüyoruz ki ekrana daha rahat sığsınlar */
-        flex: 1 1 calc(50% - 10px); /* KÜÇÜK BİR HİLE: Mobilde butonları 2'şerli yan yana dizer! */
+        flex: 0 0 auto; /* Daralmayı engeller, buton boyutunu korur */
+        padding: 8px 18px;
+        font-size: 13px;
+        border-radius: 20px; /* Daha modern hap şekli */
     }
 
-    /* KART İÇİ DÜZENLEMELER */
+    /* KARTLARI YATAY VE KOMPAKT HALE GETİRDİK (Modern Sipariş Uygulamaları Gibi) */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .full-width-style .item-inner {
+        flex-direction: row; /* Resim solda, yazı sağda */
+        height: 130px; /* Kart boyunu çok küçülttük */
+        border-radius: 12px;
+        align-items: center;
+    }
+
     .full-width-style .item-img-wrapper {
-        height: 200px; /* Resimleri mobilde biraz daha basık yapıyoruz */
+        width: 120px; /* Resim sadece kenarda küçük bir kare olacak */
+        height: 100%;
+        flex: 0 0 120px;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .full-width-style .item-text-wrapper {
+        padding: 10px 14px;
+        justify-content: center;
+    }
+
+    .full-width-style .item-front {
+        margin-bottom: 6px;
+        gap: 4px;
     }
 
     .full-width-style .item-name {
-        font-size: 20px;
+        font-size: 16px; /* Dev yazıyı küçülttük */
+    }
+
+    .full-width-style .item-price {
+        font-size: 14px;
+        padding: 2px 8px;
+    }
+
+    /* Açıklama yazısını 2 satır ile sınırlandırdık (taşıp kartı bozmasın diye) */
+    .full-width-style .item-details p {
+        font-size: 12px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 
-/* KÜÇÜK EKRANLI TELEFONLAR İÇİN (max 480px) */
 @media (max-width: 480px) {
     .filter-btn {
-        flex: 1 1 100%; /* Ekran çok küçülürse butonları tamamen alt alta dizer */
+        flex: 1 1 100%;
     }
 }
