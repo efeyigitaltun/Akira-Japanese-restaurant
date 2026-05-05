@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════
-   RYŌTEI ZEN — ARAMA MOTORU
+   AKIRA — ARAMA MOTORU
 ═══════════════════════════════════════════════ */
 
 const SEARCH_INDEX = [
   // ── Sayfalar ───────────────────────────────────
-  { title: 'Ana Sayfa',              desc: 'Ryōtei Zen giriş hero slider',                                       url: 'index.html',          icon: '🏠', img: null, tag: 'Sayfa' },
+  { title: 'Ana Sayfa',              desc: 'Akira giriş hero slider',                                            url: 'index.html',          icon: '🏠', img: null, tag: 'Sayfa' },
   { title: 'Hakkımızda',             desc: 'Şef Kenji Takeshi Michelin mutfak felsefesi 18 yıl deneyim',         url: 'index.html#about',    icon: '👨‍🍳', img: null, tag: 'Sayfa' },
   { title: 'Rezervasyon & İletişim', desc: 'Tokyo Shinjuku rezervasyon telefon e-posta çalışma saatleri',        url: 'index.html#contact',  icon: '📞', img: null, tag: 'Sayfa' },
   { title: 'Menü',                   desc: 'Tüm yemekler içecekler tatlılar sushi ramen tempura',                url: 'menu.html',           icon: '📋', img: null, tag: 'Sayfa' },
