@@ -220,39 +220,20 @@ nav {
     z-index: 2;
 }
 
-/* Asıl kart */
+/* Asıl kart (Beyaz arka plan duruyor, animasyonlar kaldırıldı) */
 .chef-board-inner {
     background: #fff;
     padding: 14px 14px 22px 14px;
     border-radius: 3px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.13);
-    transform: rotate(-2deg);
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-                box-shadow 0.5s ease;
+    /* transform: rotate(-2deg); Eğer kartın eskisi gibi hafif eğik durmasını isterseniz başındaki /* işaretlerini silebilirsiniz */
     position: relative;
     z-index: 2;
 }
 
-.chef-board:hover .chef-board-inner {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 0 28px 60px rgba(169, 17, 16, 0.18);
-}
-
-/* Arkadaki gölge kopya — derinlik efekti */
+/* Arkadaki gölge kopya — gizlendi (Sadece tek bir net kart görünmesi için) */
 .chef-board-shadow {
-    position: absolute;
-    inset: 0;
-    background: var(--cream);
-    border-radius: 3px;
-    transform: rotate(2deg) translateY(6px);
-    z-index: 1;
-    opacity: 0.7;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-    transition: transform 0.5s ease;
-}
-
-.chef-board:hover .chef-board-shadow {
-    transform: rotate(1deg) translateY(10px);
+    display: none;
 }
 
 /* Fotoğraf alanı */
@@ -308,7 +289,6 @@ nav {
     letter-spacing: 0.25em;
     display: block;
 }
-
 /* --- Metin Tarafı --- */
 .about-text-content {
     flex: 1;
@@ -441,21 +421,6 @@ nav {
     margin-bottom: 10px;
 }
 
-.footer-kanji {
-    font-size: 20px; 
-    color: var(--crimson); 
-    opacity: 0.6;
-}
-
-/* Animasyonları biraz daha elit hissettirecek şekilde yumuşatma */
-.featured-inner {
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.featured-card:hover .featured-inner {
-    transform: translateY(-8px); /* 10px yerine 8px daha zarif bir sıçrama sağlar */
-    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12);
-}
 .featured-section {
     position: relative;
     padding: 100px 8%;
@@ -474,14 +439,16 @@ nav {
     justify-items: center;
 }
 
+/* KARTLARIN EŞİT YÜKSEKLİKTE OLMASI İÇİN */
 .featured-card {
     width: 100%;
     max-width: 380px;
-    height: auto;
+    height: 100%; 
 }
 
 .featured-inner {
     width: 100%;
+    height: 100%; /* İçeriğin tamamı kaplaması için */
     background-color: #ffffff;
     border-radius: 20px;
     display: flex;
@@ -495,32 +462,41 @@ nav {
 }
 
 .featured-card:hover .featured-inner {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(169, 17, 16, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12);
 }
 
+/* RESİMLERİN KESİN OLARAK KİLİTLENMESİ */
 .featured-img-box {
     width: 100%;
     height: 250px;
+    flex: 0 0 250px; /* Büyüme ve küçülmeyi yasaklar, 250px'e sabitler */
     overflow: hidden;
+    margin: 0;
 }
 
 .featured-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
+/* YAZI ALANININ DÜZENİ */
 .featured-text-wrapper {
-    padding: 25px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    flex: 1; /* Resimden kalan tüm boşluğu eşit doldurur */
 }
 
+/* BAŞLIK VE FİYAT (Menüdeki gibi alt alta ve aynı hizada) */
 .featured-front {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
 .featured-card-title {
@@ -528,6 +504,7 @@ nav {
     font-size: 24px;
     color: var(--ink);
     margin: 0;
+    line-height: 1.1;
 }
 
 .featured-card-price {
@@ -537,22 +514,17 @@ nav {
     background: rgba(169, 17, 16, 0.08);
     padding: 2px 12px;
     border-radius: 20px;
+    margin: 0;
 }
 
+/* AÇIKLAMALAR (Hover olmadan sürekli görünür) */
 .featured-details {
-    max-height: 0;
-    opacity: 0;
+    position: static; 
+    max-height: none; 
+    opacity: 1; 
     padding: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s ease, 
-                padding 0.4s ease;
-}
-
-.featured-card:hover .featured-details {
-    max-height: 150px;
-    opacity: 1;
-    padding-top: 15px; 
+    overflow: visible;
+    transition: none; 
 }
 
 .featured-card-desc {
@@ -567,7 +539,6 @@ nav {
 .featured-btn-container {
     margin-top: 20px;
 }
-
 /* ═══════════════════════════════════════════════
    İLETİŞİM (CONTACT) BÖLÜMÜ
 ═══════════════════════════════════════════════ */
@@ -867,7 +838,89 @@ a.footer-link:hover {
    MOBİL OPTİMİZASYON - EKSİK OLAN KISIMLAR (max 768px)
 ═══════════════════════════════════════════════ */
 @media (max-width: 768px) {
-    
+        nav {
+        padding: 0 20px;
+        height: 60px;
+    }
+    .nav-links,
+    .nav-right {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 1000;
+        position: relative;
+    z-index: 1001;
+    }
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--ink);
+        transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger.open span {
+    background: var(--crimson);
+}
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: fixed;
+        inset: 0;
+        background: rgba(255, 231, 213, 0.97);
+        backdrop-filter: blur(12px);
+        z-index: 998;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+    .mobile-nav-link {
+        font-family: 'Bayon', sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        color: var(--ink);
+        text-decoration: none;
+    }
+    .mobile-nav-link:hover { color: var(--crimson); }
+    .mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: var(--crimson);
+    transition: width 0.3s ease;
+}
+.mobile-nav-link:hover::after {
+    width: 100%;
+}
+
+    .featured-grid {
+    grid-template-columns: 1fr;
+}
+.featured-card {
+    max-width: 100%;
+}
+        
     /* 1. HERO & SLIDER KÜÇÜLTME */
     .hero-title {
         font-size: 42px; /* Başlık mobilde devasa kalmasın */
@@ -880,6 +933,12 @@ a.footer-link:hover {
         margin-top: 30px;
         width: 95%; /* Kenarlardan biraz boşluk kalsın */
     }
+    .contact-title {
+    font-size: 36px;
+}
+.hero-section {
+    padding-top: 72px;
+}
 
     /* 2. İLETİŞİM BÖLÜMÜNÜ ALT ALTA ALMA */
     .contact-section {

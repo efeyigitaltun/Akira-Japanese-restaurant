@@ -143,26 +143,29 @@ body.menu-page {
 /* ═══════════════════════════════════════════════
    3. YEMEK GRİDİ (ORTAK)
 ═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   3. YEMEK GRİDİ (ORTAK)
+═══════════════════════════════════════════════ */
 .menu-grid {
-    align-items: start;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 40px;
     justify-items: center;
-    
+    /* Kartların alt kısımlarının eşitlenmesi için align-items: start; sildik */
 }
 
 /* ═══════════════════════════════════════════════
-   4. KARE RESİMLİ STİL (full-width-style) - YENİ FAVORİN
+   4. KARE RESİMLİ STİL (full-width-style)
 ═══════════════════════════════════════════════ */
 .menu-item.full-width-style {
     width: 100%;
     max-width: 380px;
-    height: auto; /* İçerik büyüdükçe genişlesin */
+    height: 100%; /* Tüm kartlar ızgarada aynı boya gelsin */
 }
 
 .full-width-style .item-inner {
     width: 100%;
+    height: 100%; /* Kartın içi de tüm alanı kaplasın */
     background-color: #ffffff;
     border-radius: 20px;
     display: flex;
@@ -170,19 +173,19 @@ body.menu-page {
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    /* TAKILMA ÇÖZÜMÜ */
     will-change: transform, box-shadow;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .full-width-style:hover .item-inner {
-    transform: translateY(-10px);
+    transform: translateY(-8px); /* 8 piksel yukarı zıplatır */
+    box-shadow: 0 15px 40px rgba(169, 17, 16, 0.12); /* Gölgeyi genişletir ve kızartır */
 }
 
-/* Resim Alanı (Sabit ve Kare) */
+/* RESİMLERİN İLK BAŞTAKİ GİBİ SABİT KALMASI İÇİN */
 .full-width-style .item-img-wrapper {
     width: 100%;
     height: 250px;
+    flex: 0 0 250px; /* Büyüme ve küçülmeyi YASAKLAR, KESİN 250PX KALIR */
     border-radius: 0;
     border: none;
     margin: 0;
@@ -194,47 +197,46 @@ body.menu-page {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* RESİM SABİT: Hareket yok */
-    transition: none !important;
-    transform: none !important;
+    display: block;
 }
 
-/* Metin Alanı */
+/* YAZI ALANININ DÜZENİ */
 .full-width-style .item-text-wrapper {
-    padding: 25px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: left;
+    flex: 1; /* RESİMDEN KALAN TÜM BOŞLUĞU DOLDURUR */
+}
+
+.full-width-style .item-front {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
 .full-width-style .item-name {
     font-size: 24px;
     text-align: left;
-    margin-bottom: 8px;
+    margin: 0; /* Başlığın kaymasını önler */
+    line-height: 1.1;
 }
 
 .full-width-style .item-price {
     font-size: 18px;
-    align-self: flex-start;
-    margin-bottom: 0;
+    margin: 0;
 }
 
-/* Detaylar (Aşağı Doğru Pürüzsüz Açılan) */
+/* DETAYLAR (AÇIKLAMA KISMI) */
 .full-width-style .item-details {
-    position: static; /* Kartın akışına dahil */
-    max-height: 0;
-    opacity: 0;
-    padding: 0 20px;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s ease, 
-                padding 0.4s ease;
-}
-
-.full-width-style:hover .item-details {
-    max-height: 150px;
-    opacity: 1;
-    padding-bottom: 25px; /* Alt boşluğu genişleyince veriyoruz */
+    position: static; 
+    max-height: none; 
+    opacity: 1; 
+    padding: 0;
+    overflow: visible;
+    transition: none; 
 }
 
 /* ═══════════════════════════════════════════════
