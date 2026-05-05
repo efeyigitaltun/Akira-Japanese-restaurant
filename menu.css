@@ -144,11 +144,12 @@ body.menu-page {
    3. YEMEK GRİDİ (ORTAK)
 ═══════════════════════════════════════════════ */
 .menu-grid {
+    align-items: start;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 40px;
     justify-items: center;
-    align-items: start;
+    
 }
 
 /* ═══════════════════════════════════════════════
@@ -176,7 +177,6 @@ body.menu-page {
 
 .full-width-style:hover .item-inner {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(169, 17, 16, 0.15);
 }
 
 /* Resim Alanı (Sabit ve Kare) */
@@ -335,4 +335,189 @@ body.menu-page {
     line-height: 1.6;
     margin: 0;
     font-style: italic;
+}
+/* ═══════════════════════════════════════════════
+   FİLTRE ANİMASYONU
+═══════════════════════════════════════════════ */
+@keyframes filterFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+.menu-footer {
+    background: var(--ink);
+    padding: 40px 8% 0 8%;
+}
+
+.menu-footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.menu-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+}
+
+.footer-brand-desc {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    margin: 8px 0 0 0;
+}
+
+.menu-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-col-title {
+    font-family: 'Bayon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    margin-bottom: 4px;
+}
+
+.footer-link {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    line-height: 1.4;
+}
+
+a.footer-link:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.footer-social-icon {
+    color: rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.footer-social-icon:hover {
+    color: var(--crimson);
+    transform: translateY(-2px);
+}
+
+.menu-footer-bottom .footer-bottom-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+}
+
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 20px 0;
+}
+
+.footer-copy {
+    font-family: 'Bayon', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.25);
+}
+
+.footer-kanji-deco {
+    font-family: serif;
+    font-size: 28px;
+    color: rgba(169,17,16,0.3);
+    line-height: 1;
+}
+
+.footer-kanji {
+    font-size: 20px;
+    color: var(--crimson);
+    opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+    .menu-footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .menu-footer {
+        padding: 50px 6% 0 6%;
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   MOBİL OPTİMİZASYON - MENU.CSS (max 768px)
+═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    
+    .menu-section {
+        padding-top: 100px; /* Mobilde üst boşluğu biraz azaltıyoruz */
+    }
+
+    .menu-title {
+        font-size: 38px; /* Başlığı daraltıyoruz */
+    }
+
+    /* FİLTRE BUTONLARI */
+    .menu-filters {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 12px; /* Butonları küçültüyoruz ki ekrana daha rahat sığsınlar */
+        flex: 1 1 calc(50% - 10px); /* KÜÇÜK BİR HİLE: Mobilde butonları 2'şerli yan yana dizer! */
+    }
+
+    /* KART İÇİ DÜZENLEMELER */
+    .full-width-style .item-img-wrapper {
+        height: 200px; /* Resimleri mobilde biraz daha basık yapıyoruz */
+    }
+
+    .full-width-style .item-name {
+        font-size: 20px;
+    }
+}
+
+/* KÜÇÜK EKRANLI TELEFONLAR İÇİN (max 480px) */
+@media (max-width: 480px) {
+    .filter-btn {
+        flex: 1 1 100%; /* Ekran çok küçülürse butonları tamamen alt alta dizer */
+    }
 }

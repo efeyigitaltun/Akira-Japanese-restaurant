@@ -9,15 +9,26 @@
     --white:     #ffffff;
 }
 
+/* Her elemanın padding ve border değerlerini genişliğe dahil etmesini sağlar (Taşmaları kökten çözer) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Sayfanın sağa-sola kaymasını GİZLER */
+    width: 100%;
 }
 
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Garantilemek için body'ye de ekliyoruz */
     font-family: 'Inria Serif', serif;
     background-color: var(--cream);
-    /* Arka plan sadece body'de tanımlı. Kırılmaları önler. */
+    
+    /* home.css için arka plan kodların (base.css'de arka plan resmi yoksa sadece rengi bırakabilirsin) */
     background-image: 
       linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
       url("BackgroundImages/J1.png");
@@ -197,46 +208,112 @@ nav {
     padding: 120px 8%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    justify-content: flex-start;
+    gap: 200px;
     z-index: 1;
 }
 
+/* --- Şef Kartı (Polaroid) --- */
 .chef-board {
-    flex: 0 0 400px;
-    background: #FFE7D5; 
-    padding: 15px;
-    border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    transform: rotate(-1.5deg); 
-    transition: all 0.4s ease;
+    flex: 0 0 380px;
+    position: relative;
     z-index: 2;
 }
 
-.chef-board:hover { transform: rotate(0deg) scale(1.02); }
+/* Asıl kart */
+.chef-board-inner {
+    background: #fff;
+    padding: 14px 14px 22px 14px;
+    border-radius: 3px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.13);
+    transform: rotate(-2deg);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
 
-.chef-image-box { width: 100%; height: 500px; position: relative; overflow: hidden; }
-.chef-img { width: 100%; height: 100%; object-fit: cover; }
+.chef-board:hover .chef-board-inner {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 28px 60px rgba(169, 17, 16, 0.18);
+}
 
+/* Arkadaki gölge kopya — derinlik efekti */
+.chef-board-shadow {
+    position: absolute;
+    inset: 0;
+    background: var(--cream);
+    border-radius: 3px;
+    transform: rotate(2deg) translateY(6px);
+    z-index: 1;
+    opacity: 0.7;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: transform 0.5s ease;
+}
+
+.chef-board:hover .chef-board-shadow {
+    transform: rotate(1deg) translateY(10px);
+}
+
+/* Fotoğraf alanı */
+.chef-image-box {
+    width: 100%;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chef-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Kırmızı rozet */
 .chef-badge {
     position: absolute;
-    bottom: 20px;
-    right: -10px;
+    bottom: 18px;
+    right: -8px;
     background: var(--crimson);
     color: white;
-    padding: 10px 20px;
+    padding: 8px 18px;
     font-family: 'Bayon', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    box-shadow: 0 4px 12px rgba(169, 17, 16, 0.35);
 }
 
+/* İsim alanı (Polaroid alt kısmı) */
 .chef-name-tag {
-    padding: 15px 5px 5px 5px;
+    padding: 16px 6px 4px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.chef-name-main {
     font-family: 'Bayon', sans-serif;
     color: var(--ink);
-    font-size: 18px;
-    letter-spacing: 0.1em;
+    font-size: 17px;
+    letter-spacing: 0.14em;
+    display: block;
 }
 
-.about-text-content { flex: 1; max-width: 600px; }
+.chef-name-kanji {
+    font-family: 'Inria Serif', serif;
+    color: var(--crimson);
+    font-size: 13px;
+    opacity: 0.7;
+    letter-spacing: 0.25em;
+    display: block;
+}
+
+/* --- Metin Tarafı --- */
+.about-text-content {
+    flex: 1;
+    max-width: 1000px;
+}
 
 .about-tag {
     font-family: 'Bayon', sans-serif;
@@ -246,12 +323,115 @@ nav {
     margin-bottom: 20px;
 }
 
-.about-title { font-family: 'Bayon', sans-serif; font-size: 56px; color: var(--ink); line-height: 1.1; margin-bottom: 30px; }
-.about-description { font-family: 'Inria Serif', serif; font-size: 19px; color: var(--gray); line-height: 1.8; opacity: 0.95; font-style: italic; margin-bottom: 40px; }
+.about-title {
+    font-family: 'Bayon', sans-serif;
+    font-size: 56px;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
 
-.chef-signature { border-left: 4px solid var(--crimson); padding-left: 25px; }
-.signature-text { font-family: 'Inria Serif', serif; font-size: 26px; font-weight: 700; display: block; color: var(--ink); }
-.signature-sub { font-family: 'Bayon', sans-serif; color: var(--crimson); font-size: 14px; }
+.about-description {
+    font-family: 'Inria Serif', serif;
+    font-size: 19px;
+    color: var(--gray);
+    line-height: 1.8;
+    opacity: 0.95;
+    font-style: italic;
+    margin-bottom: 44px;
+}
+
+/* İstatistik satırı */
+.about-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 44px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(23, 23, 23, 0.1);
+    border-bottom: 1px solid rgba(23, 23, 23, 0.1);
+}
+
+.about-stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stat-number {
+    font-family: 'Bayon', sans-serif;
+    font-size: 42px;
+    color: var(--crimson);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: 'Bayon', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+.about-stat-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(23, 23, 23, 0.12);
+}
+
+/* İmza */
+.chef-signature {
+    border-left: 4px solid var(--crimson);
+    padding-left: 25px;
+}
+
+.signature-text {
+    font-family: 'Inria Serif', serif;
+    font-size: 26px;
+    font-weight: 700;
+    display: block;
+    color: var(--ink);
+}
+
+.signature-sub {
+    font-family: 'Bayon', sans-serif;
+    color: var(--crimson);
+    font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — HAKKIMIZDA
+═══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 6%;
+        gap: 60px;
+    }
+    .chef-board {
+        flex: none;
+        width: 320px;
+    }
+    .about-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    .about-stats {
+        justify-content: center;
+    }
+    .chef-signature {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title { font-size: 40px; }
+    .stat-number { font-size: 34px; }
+    .chef-board { width: 280px; }
+}
 
 
 /* ═══════════════════════════════════════════════
@@ -434,9 +614,138 @@ nav {
 /* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
-.site-footer { background: var(--ink); display: flex; align-items: center; justify-content: center; gap: 20px; padding: 28px 48px; }
-.footer-text { font-family: 'Bayon', sans-serif; font-size: 12px; letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.4); }
+.site-footer {
+    background: var(--ink);
+    padding: 40px 8% 0 8%;
+}
 
+.site-footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.site-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+}
+
+.footer-brand-desc {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    margin: 8px 0 0 0;
+}
+
+.site-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-col-title {
+    font-family: 'Bayon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    margin-bottom: 4px;
+}
+
+.footer-link {
+    font-family: 'Inria Serif', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    line-height: 1.4;
+}
+
+a.footer-link:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.footer-social-icon {
+    color: rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.footer-social-icon:hover {
+    color: var(--crimson);
+    transform: translateY(-2px);
+}
+
+.site-footer-bottom .footer-bottom-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+}
+
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 20px 0;
+}
+
+.footer-copy {
+    font-family: 'Bayon', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.25);
+}
+
+.footer-kanji-deco {
+    font-family: serif;
+    font-size: 28px;
+    color: rgba(169,17,16,0.3);
+    line-height: 1;
+}
+
+.footer-kanji {
+    font-size: 20px;
+    color: var(--crimson);
+    opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+    .site-footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .site-footer {
+        padding: 50px 6% 0 6%;
+    }
+}
 /* ═══════════════════════════════════════════════
    SCROLL ANİMASYONLARI (FADE-IN)
 ═══════════════════════════════════════════════ */
@@ -506,11 +815,99 @@ nav {
 /* Sağ */
 .slider-btn.next {
     right: 15px;
+
 }
+/* ── Map Sahnesi (Torii + Map wrapper) ────────── */
+/* 1. TÜM SİSTEMİ İÇİNDE TUTAN ÇERÇEVE */
+.map-scene {
+    position: relative;
+    width: 100%;           
+    max-width: 1250px;     
+    margin: 80px auto; /* Kapı artık yukarı taşacağı için üstten (80px) boşluk bırakmak iyi olur */
+    aspect-ratio: 16 / 9;  
+    
+    
+    /* overflow: hidden; SATIRINI SİLİYORUZ */
+    overflow: visible; /* (Veya direkt silebilirsin, varsayılanı budur) */
+}
+
+/* 2. TORİİ KAPISI */
+.torii-overlay {
+    position: absolute;
+    /* PİKSEL YERİNE YÜZDE KULLANMALISIN Kİ ÇERÇEVEYLE BİRLİKTE KÜÇÜLSÜN */
+    top: -25%;       /* Çerçevenin en üstünden başla */
+    left: -92%;      /* Çerçevenin en solundan başla */
+    width: 216%;   /* Çerçeveyi tam kapla */
+    height: auto;  
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* 3. HARİTA (KAPI İÇİNDEKİ BOŞLUĞA YERLEŞECEK) */
 .map-container {
-    max-width: 1200px;
-    margin: 80px auto;
+    position: absolute;
+    z-index: 2;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    
+    /* BURADAKİ YÜZDELERİ KENDİ TASARIMINA GÖRE AYARLA (Hizalamayı buradan yap) */
+    top: 30%;      /* Yukarıdan ne kadar boşluk? */
+    left: 16.8%;     /* Soldan ne kadar boşluk? */
+    width: 70%;    /* Harita ne kadar geniş olacak? */
+    height: 56%;   /* Harita ne kadar uzun olacak? */
+}
+
+/* 4. IFRAME (Harita kutusunu tam doldurur) */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* ═══════════════════════════════════════════════
+   MOBİL OPTİMİZASYON - EKSİK OLAN KISIMLAR (max 768px)
+═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    
+    /* 1. HERO & SLIDER KÜÇÜLTME */
+    .hero-title {
+        font-size: 42px; /* Başlık mobilde devasa kalmasın */
+        padding: 0 15px;
+    }
+    .slide img {
+        height: 350px; /* Mobilde 600px çok uzun olur, daraltıyoruz */
+    }
+    .slider-container {
+        margin-top: 30px;
+        width: 95%; /* Kenarlardan biraz boşluk kalsın */
+    }
+
+    /* 2. İLETİŞİM BÖLÜMÜNÜ ALT ALTA ALMA */
+    .contact-section {
+        flex-direction: column; /* Yan yana olan formu ve adresi alt alta koyar */
+        padding: 60px 6% 80px 6%;
+        gap: 50px;
+    }
+    .contact-info {
+        flex: none;
+        width: 100%;
+        text-align: center; /* Mobilde yazıları ortalamak daha şık durur */
+    }
+    .contact-detail-item {
+        align-items: center;
+        border-left: none; /* Soldaki çizgiyi kaldırıp... */
+        border-bottom: 2px solid var(--crimson); /* ...alta çizgi ekliyoruz (daha şık) */
+        padding-left: 0;
+        padding-bottom: 12px;
+    }
+    .contact-divider {
+        margin: 30px auto; /* Ortalı çizgi */
+    }
+    .contact-form-wrapper {
+        max-width: 100%;
+        padding: 35px 20px;
+    }
+    .form-row {
+        flex-direction: column; /* Form içindeki yan yana inputları alt alta dizer */
+        gap: 20px;
+    }
 }

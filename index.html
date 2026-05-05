@@ -8,7 +8,7 @@
     <title>Hikari Ryōtei</title>
     <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="homepage.css">
 </head>
 <body class="home-page">
     
@@ -87,7 +87,7 @@
                 <div class="slider-container fade-in delay-2">
                     <div class="slider-wrapper" id="sliderWrapper">
                         <!-- alt etiketleri eklendi, inline stiller CSS class'ına dönüştürüldü -->
-                          <button class="slider-btn prev">&#10094;</button>
+                          
                         <div class="slide">
                             <img src="images/Restorant1.jpg" alt="Ryōtei Zen İç Mekan 1">
                         </div>
@@ -106,31 +106,58 @@
                         
                     </div>
                     <button class="slider-btn next">&#10095;</button>
+                    <button class="slider-btn prev">&#10094;</button>
                 </div>
             </div>
         </section>
 
         <!-- HAKKIMIZDA -->
         <section id="about" class="about-section">
+
             <div class="chef-board fade-in">
-                <div class="chef-image-box">
-                    <!-- lazy loading eklendi -->
-                    <img src="images/chef.jpg" alt="Executive Chef Kenji Takeshi" class="chef-img" loading="lazy">
-                    <div class="chef-badge">MASTER CHEF</div>
+                <div class="chef-board-inner">
+                    <div class="chef-image-box">
+                        <img src="images/chef.jpg" alt="Executive Chef Kenji Takeshi" class="chef-img" loading="lazy">
+                        <div class="chef-badge">MASTER CHEF</div>
+                    </div>
+                    <div class="chef-name-tag">
+                        <span class="chef-name-main">KENJI TAKESHI</span>
+                        <span class="chef-name-kanji">竹石 健二</span>
+                    </div>
                 </div>
-                <div class="chef-name-tag">
-                    <span>KENJI TAKESHI</span>
-                </div>
+                <!-- Dekoratif gölge katmanı -->
+                <div class="chef-board-shadow"></div>
             </div>
 
             <div class="about-text-content fade-in delay-2">
                 <span class="about-tag">GELENEĞİN İZİNDE</span>
+                
                 <h2 class="about-title">BİR MUTFAK <br> FELSEFESİ</h2>
+
                 <p class="about-description">
                     "Mükemmellik küçük detayların toplamıdır, ancak mükemmellik bir detay değildir."
                     Şefimiz Kenji, Marcus Aurelius'un disiplinini ve Japon mutfağının sadeliğini
                     her tabakta birleştiriyor.
                 </p>
+
+                <!-- İstatistik satırı -->
+                <div class="about-stats">
+                    <div class="about-stat-item">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">YIL DENEYİM</span>
+                    </div>
+                    <div class="about-stat-divider"></div>
+                    <div class="about-stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">MİCHELIN YILDIZI</span>
+                    </div>
+                    <div class="about-stat-divider"></div>
+                    <div class="about-stat-item">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-label">İMZA TARIFI</span>
+                    </div>
+                </div>
+
                 <div class="chef-signature">
                     <span class="signature-text">Kenji Takeshi</span>
                     <span class="signature-sub">Kurucu & Başşef</span>
@@ -204,17 +231,20 @@
             </div>
         </section>
 
-        <div class="map-container">
-            
-            <iframe 
-            src="https://www.google.com/maps?q=Kayseri&output=embed"
-            width="100%" 
-            height="400" 
+    <div class="map-scene">
+    <img src="images/torii.png" class="torii-overlay" alt="Torii Kapısı">
+    
+    <div class="map-container">
+        <!-- Iframe içindeki width ve height değerlerini sildik -->
+        <iframe 
+            src="https://www.google.com/maps?q=Osaka&output=embed"
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy">
-            </iframe>
-        </div>
+        </iframe>
+    </div>
+</div>
+
 
         <!-- İLETİŞİM -->
         <section id="contact" class="contact-section">
@@ -295,10 +325,61 @@
 
     <!-- FOOTER -->
     <footer class="site-footer">
-        <!-- Footer inline stilleri taşındı -->
-        <span class="logo-kanji footer-kanji">料亭</span>
-        <span class="footer-text">© 2026 Ryōtei Zen — Tüm hakları saklıdır.</span>
-    </footer>
+    <div class="site-footer-top">
+        <div class="site-footer-brand">
+            <span class="logo-kanji footer-kanji">料亭</span>
+            <span class="logo-text footer-logo-text">RYŌTEI ZEN</span>
+            <p class="footer-brand-desc">Geleneksel Japon mutfağının özünü<br>modern bir sunumla masanıza taşıyoruz.</p>
+        </div>
+
+        <div class="site-footer-links">
+            <span class="footer-col-title">SAYFALAR</span>
+            <a href="index.html" class="footer-link">Ana Sayfa</a>
+            <a href="index.html#about" class="footer-link">Hakkımızda</a>
+            <a href="menu.html" class="footer-link">Menü</a>
+            <a href="index.html#contact" class="footer-link">İletişim</a>
+        </div>
+
+        <div class="site-footer-links">
+            <span class="footer-col-title">İLETİŞİM</span>
+            <span class="footer-link">Shinjuku-ku, Tokyo</span>
+            <span class="footer-link">+81 3-0000-0000</span>
+            <span class="footer-link">info@ryoteizen.com</span>
+            <span class="footer-link">Salı – Pazar, 18:00 – 23:00</span>
+        </div>
+
+        <div class="site-footer-links">
+            <span class="footer-col-title">SOSYAL</span>
+            <div class="footer-socials">
+                <a href="#" class="footer-social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="footer-social-icon" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="footer-social-icon" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer-bottom">
+        <div class="footer-bottom-divider"></div>
+        <div class="footer-bottom-inner">
+            <span class="footer-copy">© 2026 Ryōtei Zen — Tüm hakları saklıdır.</span>
+            <span class="footer-kanji-deco">禅</span>
+        </div>
+    </div>
+</footer>
 
     <!-- Slider JS mantığı harici dosyada (script.js) olduğu için buradaki kopyayı kaldırmak en temizidir, ancak çalışması için ufak form kodunu bıraktım -->
     <script>
@@ -340,5 +421,7 @@
         });
     </script>
     <script src="script.js"></script>
+
+    
 </body>
 </html>
