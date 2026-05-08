@@ -1,4 +1,44 @@
 /* ═══════════════════════════════════════════════
+   0. THE SEASONS FONT TANIMLARI
+═══════════════════════════════════════════════ */
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Light_Italic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('fonts/The_Seasons_Bold_Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
    1. GENEL AYARLAR VE DEĞİŞKENLER
 ═══════════════════════════════════════════════ */
 :root {
@@ -83,9 +123,10 @@ nav {
 .nav-link {
     position: relative;
     text-decoration: none;
-    font-family: 'Bayon', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.15em;
+    font-family: 'The Seasons', serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink);
     transition: color 0.25s ease;
@@ -168,14 +209,20 @@ nav {
 
 .mobile-menu {
     display: none; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
-    position: fixed; inset: 0; background: rgba(255, 231, 213, 0.97); backdrop-filter: blur(12px);
+    position: fixed; inset: 0; 
+    /* YENİ CAM EFEKTİ (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.15); /* Saydam beyaz bir renk */
+    backdrop-filter: blur(25px); /* Çok yoğun bir bulanıklık */
+    -webkit-backdrop-filter: blur(25px); /* Safari uyumluluğu */
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.05); /* Işık yansıması */
+    
     z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
 }
 
 .mobile-menu.open { opacity: 1; pointer-events: all; }
 
 .mobile-nav-link {
-    font-family: 'Bayon', sans-serif; font-size: 26px; letter-spacing: 0.15em; color: var(--ink);
+    font-family: 'The Seasons', serif; font-weight: 700; font-size: 26px; letter-spacing: 0.1em; color: var(--ink);
     text-decoration: none; position: relative;
 }
 
@@ -190,10 +237,10 @@ nav {
 .site-footer { background: var(--ink); padding: 40px 8% 0 8%; }
 .site-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 60px; }
 .site-footer-brand { display: flex; flex-direction: column; gap: 10px; }
-.footer-logo-text { font-size: 22px; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.9); text-transform: uppercase; }
+.footer-logo-text { font-family: 'The Seasons', serif; font-weight: 700; font-size: 22px; letter-spacing: 0.1em; color: rgba(255,255,255,0.9); text-transform: uppercase; }
 .footer-brand-desc { font-family: 'Inria Serif', serif; font-size: 14px; font-style: italic; color: rgba(255,255,255,0.4); line-height: 1.7; margin: 8px 0 0 0; }
 .site-footer-links { display: flex; flex-direction: column; gap: 14px; }
-.footer-col-title { font-family: 'Bayon', sans-serif; font-size: 11px; letter-spacing: 0.25em; color: var(--crimson); margin-bottom: 4px; }
+.footer-col-title { font-family: 'The Seasons', serif; font-weight: 700; font-size: 12px; letter-spacing: 0.2em; color: var(--crimson); margin-bottom: 4px; }
 .footer-link { font-family: 'Inria Serif', serif; font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.25s ease; line-height: 1.4; }
 .footer-link:hover { color: rgba(255,255,255,0.9); }
 .footer-socials { display: flex; gap: 16px; margin-top: 4px; }
@@ -202,7 +249,7 @@ nav {
 .footer-social-icon:hover { color: var(--crimson); transform: translateY(-2px); }
 .footer-bottom-divider { height: 1px; background: rgba(255,255,255,0.08); }
 .footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 20px 0; }
-.footer-copy { font-family: 'Bayon', sans-serif; font-size: 12px; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); }
+.footer-copy { font-family: 'The Seasons', serif; font-weight: 300; font-size: 13px; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
 .footer-kanji-deco { font-family: serif; font-size: 28px; color: rgba(169,17,16,0.3); line-height: 1; }
 .footer-kanji { font-size: 20px; color: var(--crimson); opacity: 0.7; }
 
@@ -237,6 +284,10 @@ nav {
     body {
         /* Mobil cihazlardaki "aşırı zoomlu arka plan" hatasını çözer */
         background-attachment: scroll; 
+    }
+
+    .mobile-hide {
+        display: none !important;
     }
 
     nav { 
@@ -289,4 +340,42 @@ nav {
     .mobile-nav-link { font-size: 22px; }
 }
 
+/* --- HAKKIMIZDA YENİ MİNİMALİST KISIM --- */
+.about-minimal-footer {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
+.minimal-line {
+    width: 60px;
+    height: 2px;
+    background: var(--crimson);
+    opacity: 0.7;
+}
+
+.minimal-quote {
+    font-family: 'Inria Serif', serif;
+    font-size: 18px;
+    color: var(--gray);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 450px;
+}
+
+.about-btn-wrapper {
+    margin-top: 10px;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 1024px) {
+    .about-minimal-footer {
+        align-items: center;
+        text-align: center;
+    }
+    .minimal-quote {
+        max-width: 100%;
+    }
+}
