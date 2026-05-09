@@ -124,10 +124,10 @@
 
     <div class="about-text-content fade-in delay-2">
         <span class="about-tag">GELENEĞİN İZİNDE</span>
-        <h2 class="about-title">BİR MUTFAKTAN FAZLASI</h2>
+        <h2 class="about-title">BİR MUTFAK <br> FELSEFESİ</h2>
 
         <p class="about-description">
-            Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefesi ile yürüttüğümüz restoranımızda hedefimiz üretimden yönetime kadar her alanda küçük ama sürekli iyileştirmelerle büyük başarılar hedefleyen bir yönetim felsefesini benimsemektir. Mevcut durumla yetinmeyip süreçleri sürekli daha iyi hale getirmeyi kendimize görev edindik. Disiplinli şeflerimiz ve titiz çalışma ortamımızla size daha önce deneyimlemediğiniz bir Japon restoran deneyimi sunacağız.
+Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefesi ile yürüttüğümüz restoranımızda hedefimiz üretimden yönetime kadar her alanda küçük ama sürekli iyileştirmelerle büyük başarılar hedefleyen bir yönetim felsefesini benimsemektir. Mevcut durumla yetinmeyip süreçleri sürekli daha iyi hale getirmeyi kendimize görev edindik. Disiplinli şeflerimiz ve titiz çalışma ortamımızla size daha önce deneyimlemediğiniz bir Japon restoran deneyimi sunacağız.
         </p>
         </div>
 </section>
@@ -152,7 +152,7 @@
                                 <span class="featured-card-price">₺520</span>
                             </div>
                             <div class="featured-details">
-                                <p class="featured-card-desc">3 Maguro, 3 Somon, 2 Ebi, 2 Levrek, 2 Uskumru / Soya Sosu,Wasabi ve Zencefil Turşusu ile servis edilmektedir.</p>
+                                <p class="featured-card-desc">3 Maguro, 3 Somon, 2 Ebi, 2 Levrek, 2 Uskumru / Soya Sosu, Wasabi ve Zencefil Turşusu ile servis edilmektedir.</p>
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                                 <span class="featured-card-price">₺450</span>
                             </div>
                             <div class="featured-details">
-                                <p class="featured-card-desc">ince ramen erişteleri, chashu eti, ağaç kulağı mantarı ve ajitama yumurtası ile.</p>
+                                <p class="featured-card-desc">İnce ramen erişteleri, chashu eti, ağaç kulağı mantarı ve ajitama yumurtası ile.</p>
                             </div>
                         </div>
                     </div>
@@ -306,10 +306,8 @@
 
         <div class="site-footer-links">
             <span class="footer-col-title">İLETİŞİM</span>
-            <span class="footer-link">Shinjuku-ku, Tokyo</span>
             <span class="footer-link">+81 3-0000-0000</span>
             <span class="footer-link">info@akira.com</span>
-            <span class="footer-link">Salı – Pazar, 18:00 – 23:00</span>
         </div>
 
         <div class="site-footer-links">
@@ -345,48 +343,8 @@
     </div>
 </footer>
 
-    <!-- Slider JS mantığı harici dosyada (script.js) olduğu için buradaki kopyayı kaldırmak en temizidir, ancak çalışması için ufak form kodunu bıraktım -->
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const successMsg = document.getElementById('formSuccess');
-            successMsg.style.opacity = '1';
-            setTimeout(() => { successMsg.style.opacity = '0'; }, 4000);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-            hamburger.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.toggle('open');
-                hamburger.classList.toggle('open', isOpen);
-                document.body.style.overflow = isOpen ? 'hidden' : '';
-            });
-
-            mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open');
-                    hamburger.classList.remove('open');
-                    document.body.style.overflow = '';
-                });
-            });
-        });
-    </script>
+    <script src="app.js"></script>
     <script src="script.js"></script>
     <script src="search.js"></script>
-
-    
 </body>
 </html>

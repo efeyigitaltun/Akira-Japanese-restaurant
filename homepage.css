@@ -124,7 +124,7 @@
 .about-text-content { flex: 1; max-width: 1000px; }
 .about-tag { font-family: 'The Seasons', serif; font-weight: 700; font-style: normal; color: var(--crimson); letter-spacing: 0.18em; display: block; margin-bottom: 20px; }
 .about-title { font-family: 'The Seasons', serif; font-weight: 700; font-size: 56px; color: var(--ink); line-height: 1.1; margin-bottom: 30px; }
-.about-description { font-size: 19px; color: #2e2e2e; line-height: 1.8; opacity: 0.95; font-style: italic; margin-bottom: 44px; }
+.about-description { font-size: 19px; color: #1a1a1a; line-height: 1.8; opacity: 0.95; font-style: italic; margin-bottom: 44px; }
 
 .about-stats { display: flex; align-items: center; gap: 0; margin-bottom: 44px; padding: 28px 0; border-top: 1px solid rgba(23, 23, 23, 0.1); border-bottom: 1px solid rgba(23, 23, 23, 0.1); }
 .about-stat-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; }

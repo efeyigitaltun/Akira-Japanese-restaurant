@@ -75,12 +75,12 @@
 
     <div class="menu-filters">
         <button class="filter-btn active" data-filter="all">HEPSİ</button>
-        <button class="filter-btn" data-filter="sushi">🍱 SUSHI & SASHIMI</button>
-        <button class="filter-btn" data-filter="ramen">🍜 RAMEN & ERİŞTE</button>
-        <button class="filter-btn" data-filter="tempura">🍤 TEMPURA & KIZARTMA</button>
-        <button class="filter-btn" data-filter="baslangic">🥣 BAŞLANGIÇLAR</button>
-        <button class="filter-btn" data-filter="tatli">🍡 TATLILAR</button>
-        <button class="filter-btn" data-filter="icecek">🍶 İÇECEKLER</button>
+        <button class="filter-btn" data-filter="sushi">SUSHI & SASHIMI</button>
+        <button class="filter-btn" data-filter="ramen">RAMEN & ERİŞTE</button>
+        <button class="filter-btn" data-filter="tempura">TEMPURA & KIZARTMA</button>
+        <button class="filter-btn" data-filter="baslangic">BAŞLANGIÇLAR</button>
+        <button class="filter-btn" data-filter="tatli">TATLILAR</button>
+        <button class="filter-btn" data-filter="icecek">İÇECEKLER</button>
     </div>
 
     <div class="menu-grid">
@@ -455,10 +455,8 @@
 
         <div class="site-footer-links">
             <span class="footer-col-title">İLETİŞİM</span>
-            <span class="footer-link">Shinjuku-ku, Tokyo</span>
             <span class="footer-link">+81 3-0000-0000</span>
             <span class="footer-link">info@akira.com</span>
-            <span class="footer-link">Salı – Pazar, 18:00 – 23:00</span>
         </div>
 
         <div class="site-footer-links">
@@ -486,51 +484,7 @@
     </div>
 </footer>
 
-<script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const menuItems  = document.querySelectorAll('.menu-item');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.dataset.filter;
-
-            menuItems.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    item.style.display = 'block';
-                    item.style.animation = 'none';
-                    item.offsetHeight;
-                    item.style.animation = 'filterFadeIn 0.35s ease forwards';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-</script>
- <script src="search.js"></script>
-
+    <script src="menu.js"></script>
+    <script src="search.js"></script>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.toggle('open');
-            hamburger.classList.toggle('open', isOpen);
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                hamburger.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-    });
-</script>
 </html>
