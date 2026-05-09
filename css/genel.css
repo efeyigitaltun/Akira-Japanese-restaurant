@@ -1,41 +1,20 @@
 @font-face {
     font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Light_Italic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Regular.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Regular.woff2') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Bold.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Bold.woff2') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('../fonts/The_Seasons_Bold_Italic.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Bold_Italic.woff2') format('truetype');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -456,7 +435,7 @@ nav {
     font-family: 'Inria Serif', serif;
     font-size: 14px;
     font-style: italic;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.8);
     line-height: 1.7;
     margin: 8px 0 0 0;
 }
@@ -541,10 +520,10 @@ nav {
     line-height: 1;
 }
 
-.footer-kanji {
+.footer-kanji { 
     font-size: 20px;
-    color: var(--crimson);
-    opacity: 0.7;
+     color: var(--crimson);
+      opacity: 0.7; 
 }
 
 /* animasyonlar */
