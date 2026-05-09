@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AKIRA - Geleneksel japon yemekleri">
+    <meta name="description" content="AKIRA - Geleneksel Japon yemekleri">
     <title>Akira</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/anasayfa.css">
-    <link rel="stylesheet" href="css/genel.css">
+
+    <!-- Google Fonts: önce bağlan, sonra async yükle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/></noscript>
+
+    <!-- LCP görseli önceden yükle -->
+    <link rel="preload" as="image" href="images/Restorant1.webp">
+
+    <!-- Kritik font önceden yükle -->
+    <link rel="preload" as="font" type="font/ttf" href="fonts/The_Seasons_Bold.ttf" crossorigin>
+    <!-- CSS async yükle - render blocking önlenir -->
+    <link rel="preload" href="css/genel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/anasayfa.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/genel.css">
+        <link rel="stylesheet" href="css/anasayfa.css">
+    </noscript>
 </head>
-<body class="home-page">
+<body class="ana-sayfa">
 
 <nav>
     <ul class="nav-links">
@@ -20,7 +36,7 @@
     </ul>
 
     <a href="index.html" class="logo">
-        <img src="images/akira-logo.png" alt="Akira Logo" class="logo-img">
+        <img src="images/akira-logo.webp" alt="Akira Logo" class="logo-img" width="268" height="268" fetchpriority="low" loading="eager">
     </a>
 
     <div class="nav-right">
@@ -80,19 +96,23 @@
             <div class="slider-container fade-in delay-2">
                 <div class="slider-wrapper" id="sliderWrapper">
                     <div class="slide">
-                        <img src="images/Restorant1.jpg" alt="Akira İç Mekan 1">
+                        <img src="images/Restorant1.webp"
+                             alt="Akira İç Mekan 1" width="1200" height="800"
+                             fetchpriority="high" decoding="sync">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant2.jpg" alt="Akira İç Mekan 2">
+                        <img src="images/Restorant2.webp"
+                             alt="Akira İç Mekan 2" width="1200" height="800"
+                             loading="lazy" decoding="async">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant3.jpg" class="object-bottom" alt="Akira İç Mekan 3">
+                        <img src="images/Restorant3.webp" class="object-bottom" alt="Akira İç Mekan 3" width="1920" height="1200" loading="lazy" decoding="async">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant4.jpg" alt="Akira İç Mekan 4">
+                        <img src="images/Restorant4.webp" alt="Akira İç Mekan 4" width="1920" height="1200" loading="lazy" decoding="async">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant5.jpg" class="object-custom" alt="Akira İç Mekan 5">
+                        <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5" width="1920" height="1200" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <button class="slider-btn next">&#10095;</button>
@@ -105,7 +125,7 @@
         <div class="chef-board fade-in">
             <div class="chef-board-inner">
                 <figure class="chef-image-box"> 
-                    <img src="images/chef.jpg" alt="Executive Chef" class="chef-img" loading="lazy">
+                    <img src="images/chef.webp" alt="Executive Chef" class="chef-img" width="700" height="1944" loading="lazy">
                     </figure>
             </div>
             <div class="chef-board-shadow"></div>
@@ -130,7 +150,7 @@ Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefes
             <article class="featured-card fade-in delay-1">
                 <div class="featured-inner">
                     <div class="featured-img-box">
-                        <img src="images/sushi-platter.jpg" alt="Sushi Platter" loading="lazy">
+                        <img src="images/sushi-platter.webp" alt="Sushi Platter" loading="lazy">
                     </div>
                     <div class="featured-text-wrapper">
                         <div class="featured-front">
@@ -147,7 +167,7 @@ Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefes
             <article class="featured-card fade-in delay-2">
                 <div class="featured-inner">
                     <div class="featured-img-box">
-                        <img src="images/tonkotsu-ramen.jpg" alt="Tonkotsu Ramen" loading="lazy">
+                        <img src="images/tonkotsu-ramen.webp" alt="Tonkotsu Ramen" loading="lazy">
                     </div>
                     <div class="featured-text-wrapper">
                         <div class="featured-front">
@@ -164,7 +184,7 @@ Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefes
             <article class="featured-card fade-in delay-3">
                 <div class="featured-inner">
                     <div class="featured-img-box">
-                        <img src="images/shrimp-tempura.jpg" alt="Shrimp Tempura" loading="lazy">
+                        <img src="images/shrimp-tempura.webp" alt="Shrimp Tempura" loading="lazy">
                     </div>
                     <div class="featured-text-wrapper">
                         <div class="featured-front">
@@ -185,16 +205,33 @@ Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefes
     </section>
 
     <div class="map-scene">
-        <img src="images/torii.png" class="torii-overlay" alt="Torii Kapısı" loading="lazy">
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.624484676938!2d35.51097782893328!3d38.70733394913525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b0d34173898ed%3A0x910da020568bd0b8!2sJoe%20Sushi%20Bar!5e0!3m2!1sen!2str!4v1778265478531!5m2!1sen!2str"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <img src="images/torii.webp" class="torii-overlay" alt="Torii Kapısı" loading="lazy">
+        <div class="map-container" id="mapContainer">
+            <div id="mapPlaceholder" style="width:100%;height:100%;background:#e8e0d5;display:flex;align-items:center;justify-content:center;">
+                <span style="font-family:serif;color:#A91110;font-size:15px;letter-spacing:0.1em;">⬤</span>
+            </div>
         </div>
+
+        <script>
+        (function(){
+            var MAP_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.624484676938!2d35.51097782893328!3d38.70733394913525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b0d34173898ed%3A0x910da020568bd0b8!2sJoe%20Sushi%20Bar!5e0!3m2!1sen!2str!4v1778265478531!5m2!1sen!2str";
+            var container = document.getElementById('mapContainer');
+            var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = MAP_SRC;
+                    iframe.style.cssText = 'width:100%;height:100%;border:0;';
+                    iframe.allowFullscreen = true;
+                    iframe.title = "Akira Restoran Konumu";
+                    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+                    container.innerHTML = '';
+                    container.appendChild(iframe);
+                    observer.disconnect();
+                }
+            }, { rootMargin: '200px' });
+            observer.observe(container);
+        })();
+        </script>
     </div>
 
     <section id="contact" class="contact-section">
@@ -327,8 +364,8 @@ Japonca "Kai" (değişim) ve "Zen" (iyi) kelimelerinden türeyen Kaizen felsefes
     </div>
 </footer>
 
-<script src="js/mobil.js"></script>
-<script src="js/script.js"></script>
-<script src="js/search.js"></script>
+<script src="js/mobil.js" defer></script>
+<script src="js/script.js" defer></script>
+<script src="js/search.js" defer></script>
 </body>
 </html>
