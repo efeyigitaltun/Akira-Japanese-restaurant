@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(next, 3500);
 
-    // swipe desteği
+    // İlk halindeki swipe desteği
     sliderWrapper.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
         dragging = true;
     });
 
     sliderWrapper.addEventListener('touchmove', function(e) {
-        // boş bırakıldı, sadece touchend'de hesaplıyoruz
+        // boş bırakıldı
     });
 
     sliderWrapper.addEventListener('touchend', function(e) {
@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var diff = startX - e.changedTouches[0].clientX;
         if (diff > 50) next();
         else if (diff < -50) prev();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+            next();
+        } else if (e.key === 'ArrowLeft') {
+            prev();
+        }
     });
 
 });

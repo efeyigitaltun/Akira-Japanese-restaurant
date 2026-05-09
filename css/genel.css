@@ -1,36 +1,36 @@
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Light.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Light_Italic.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Light_Italic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Regular.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Italic.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Bold.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'The Seasons';
-    src: url('fonts/The_Seasons_Bold_Italic.ttf') format('truetype');
+    src: url('../fonts/The_Seasons_Bold_Italic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
 }
@@ -63,13 +63,23 @@ body {
     overflow-x: hidden;
     font-family: 'Inria Serif', serif;
     background-color: var(--cream);
+}
+
+/* Sabit Arka Plan Katmanı (Yollar güncellendi) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image:
         linear-gradient(rgba(240, 235, 224, 0.55), rgba(240, 235, 224, 0.55)),
-        url("BackgroundImages/J1.png");
+        url("../images/J1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    z-index: -1;
 }
 
 section {
@@ -163,6 +173,10 @@ nav {
 }
 
 .nav-link:hover,
+.nav-link:visited {
+    color: var(--gray);
+}
+
 .nav-link.active {
     color: var(--crimson);
 }
@@ -468,6 +482,9 @@ nav {
 .footer-link:hover {
     color: rgba(255,255,255,0.9);
 }
+.footer-link:visited {
+    color: rgba(255, 255, 255, 0.35);
+}
 
 .footer-socials {
     display: flex;
@@ -559,8 +576,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-    body { background-attachment: scroll; }
-
     .mobile-hide { display: none !important; }
 
     nav {

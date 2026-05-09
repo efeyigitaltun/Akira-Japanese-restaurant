@@ -1,10 +1,23 @@
-body.menu-page {
+/* Menü Sayfası Sabit Arka Planı (Klasör yolu güncellendi) */
+body.menu-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image:
         linear-gradient(rgba(240, 235, 224, 0.65), rgba(240, 235, 224, 0.65)),
-        url("BackgroundImages/J1.png");
+        url("../images/J1.png"); /* Yol güncellendi */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    z-index: -1;
+}
+
+body.menu-page {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
 }
 
 .menu-section {
@@ -37,6 +50,7 @@ body.menu-page {
     margin: 0;
 }
 
+/* Kategori Filtreleri - Mobil Uyumlulaştırılmış */
 .menu-filters {
     display: flex;
     justify-content: center;
@@ -61,9 +75,6 @@ body.menu-page {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: none !important;
-    outline: none !important;
-    -webkit-tap-highlight-color: transparent !important;
     user-select: none;
 }
 
@@ -73,7 +84,6 @@ body.menu-page {
     color: var(--white);
     border-color: var(--crimson);
     transform: translateY(-4px);
-    box-shadow: none !important;
 }
 
 .menu-grid {
@@ -83,6 +93,7 @@ body.menu-page {
     justify-items: center;
 }
 
+/* Yemek Kartları (Article) Stili */
 .menu-item.full-width-style {
     width: 100%;
     max-width: 380px;
@@ -156,12 +167,6 @@ body.menu-page {
     margin: 0;
 }
 
-.full-width-style .item-details {
-    opacity: 1;
-    padding: 0;
-    overflow: visible;
-}
-
 .full-width-style .item-details p {
     font-family: 'Inria Serif', serif;
     font-size: 15px;
@@ -176,6 +181,7 @@ body.menu-page {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Mobil Görünüm İyileştirmeleri */
 @media (max-width: 768px) {
     .menu-section { padding-top: 90px; }
     .menu-title { font-size: 32px; }
@@ -183,12 +189,12 @@ body.menu-page {
     .menu-filters {
         flex-wrap: nowrap;
         overflow-x: auto;
-        overflow-y: visible;
-        justify-content: flex-start;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        gap: 10px;
         -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 10px 20px;
+        margin-left: -5%;
+        margin-right: -5%;
         scrollbar-width: none;
     }
 
@@ -196,9 +202,10 @@ body.menu-page {
 
     .filter-btn {
         flex: 0 0 auto;
-        padding: 8px 18px;
+        padding: 10px 22px;
         font-size: 13px;
-        border-radius: 20px;
+        border-radius: 30px;
+        white-space: nowrap;
     }
 
     .menu-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -210,8 +217,4 @@ body.menu-page {
     .full-width-style .item-name { font-size: 16px; }
     .full-width-style .item-price { font-size: 14px; padding: 2px 8px; }
     .full-width-style .item-details p { font-size: 12px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-}
-
-@media (max-width: 480px) {
-    .filter-btn { flex: 1 1 100%; }
 }

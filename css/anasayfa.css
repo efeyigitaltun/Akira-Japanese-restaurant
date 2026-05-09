@@ -158,6 +158,8 @@
     height: 460px;
     position: relative;
     overflow: hidden;
+    margin: 0;   /* Tarayıcının eklediği varsayılan dış boşluğu sıfırlar */
+    padding: 0;  /* Tarayıcının eklediği varsayılan iç boşluğu sıfırlar */
 }
 
 .chef-img {
