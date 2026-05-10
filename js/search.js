@@ -167,3 +167,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+// Sayfa tamamen yüklendiğinde loader ekranını yavaşça gizle
+window.addEventListener('load', function() {
+    const loader = document.getElementById('siteLoader');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
+});

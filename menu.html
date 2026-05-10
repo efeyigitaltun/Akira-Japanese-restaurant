@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AKIRA - Menü">
@@ -20,8 +21,42 @@
     <link rel="stylesheet" href="css/genel.css">
     <link rel="stylesheet" href="css/menu.css">
     </noscript>
+    <style>
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #FFE7D5; /* Sitenin arka plan rengi */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .koi-loader {
+            width: 200px;
+            height: 200px;
+            animation: spin 3s linear infinite;
+            transform-origin: 48% 50%; /* Yalpalama ayarını buraya da yaz */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/genel.css">
 </head>
 <body class="menu-page">
+    <div class="loader-container" id="siteLoader">
+    <img src="images/loading.webp" alt="Yükleniyor..." class="koi-loader" fetchpriority="high" loading="eager" decoding="sync" >
+</div>
 
 <nav>
     <ul class="nav-links">
