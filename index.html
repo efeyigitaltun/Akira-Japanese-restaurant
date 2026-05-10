@@ -15,18 +15,20 @@
     </noscript>
 
     <!-- LCP görseli önceden yükle -->
+    <<!-- Bu zaten var, doğru — ama slider JS ilk slide'ı göstermiyorsa işe yaramıyor -->
     <link rel="preload" as="image" href="images/Restorant1.webp" fetchpriority="high">
 
     <!-- Kritik font önceden yükle -->
      
     <link rel="preload" as="font" type="font/woff2" href="fonts/The_Seasons_Bold.woff2" crossorigin>
     <!-- CSS async yükle - render blocking önlenir -->
+    <!-- ÖNCE (CLS'e neden oluyor) -->
     <link rel="preload" href="css/genel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="css/anasayfa.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="css/genel.css">
-        <link rel="stylesheet" href="css/anasayfa.css">
-    </noscript>
+
+    <!-- SONRA (render blocking ama CLS sıfır) -->
+    <link rel="stylesheet" href="css/genel.css">
+    <link rel="stylesheet" href="css/anasayfa.css">
 </head>
 <body class="ana-sayfa">
 
@@ -97,24 +99,24 @@
             <h1 class="hero-title">Japon Mutfaklarının Sanatını Deneyin</h1>
 
             <div class="slider-container fade-in delay-2">
-                <div class="slider-wrapper" id="sliderWrapper">
-                    <div class="slide">
-                        <img src="images/Restorant1.webp"
-                             alt="Akira İç Mekan 1" width="1200" height="800"
-                             fetchpriority="high" decoding="sync">
-                    </div>
-                    <div class="slide">
-                        <img src="images/Restorant2.webp"
-                             alt="Akira İç Mekan 2" width="1200" height="800"
-                             loading="lazy" decoding="async">
-                    </div>
-                    <div class="slide">
-                        <img src="images/Restorant4.webp" alt="Akira İç Mekan 4" width="1920" height="1200" loading="lazy" decoding="async">
-                    </div>
-                    <div class="slide">
-                        <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5" width="1920" height="1200" loading="lazy" decoding="async">
-                    </div>
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slide active">
+                    <img src="images/Restorant1.webp" alt="Akira İç Mekan 1" 
+                        width="1200" height="800" fetchpriority="high" decoding="sync">
                 </div>
+                <div class="slide">
+                    <img src="images/Restorant2.webp" alt="Akira İç Mekan 2" 
+                        width="1200" height="800" loading="lazy" decoding="async">
+                </div>
+                <div class="slide">
+                    <img src="images/Restorant4.webp" alt="Akira İç Mekan 4" 
+                        width="1920" height="1200" loading="lazy" decoding="async">
+                </div>
+                <div class="slide">
+                    <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5" 
+                        width="1920" height="1200" loading="lazy" decoding="async">
+                </div>
+            </div>  <!-- slider-wrapper kapandı -->
                 <button class="slider-btn next">&#10095;</button>
                 <button class="slider-btn prev">&#10094;</button>
             </div>
@@ -312,7 +314,7 @@
 <footer class="site-footer">
     <div class="site-footer-top">
         <div class="site-footer-brand">
-            <span class="logo-kanji footer-kanji">アキラ</span>
+            <span class="footer-kanji">アキラ</span>
             <span class="logo-text footer-logo-text">AKIRA</span>
             <p class="footer-brand-desc">Zemin kat buradaydı.</p>
         </div>
@@ -359,7 +361,7 @@
         <div class="footer-bottom-divider"></div>
         <div class="footer-bottom-inner">
             <span class="footer-copy">© 2026 Akira — Tüm hakları saklıdır.</span>
-            <span class="footer-kanji-deco">旭</span>
+            <span class="footer-kanji-deco" aria-hidden="true">旭</span>
         </div>
     </div>
 </footer>

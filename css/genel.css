@@ -110,13 +110,6 @@ nav {
     pointer-events: none;
 }
 
-.logo-kanji {
-    font-size: 14px;
-    letter-spacing: 0.4em;
-    color: var(--crimson);
-    opacity: 0.7;
-}
-
 .logo-text {
     font-size: 26px;
     font-weight: 700;
@@ -510,22 +503,21 @@ nav {
     font-weight: 300;
     font-size: 13px;
     letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.25);
+     color: #D4D4D4;
 }
 
 .footer-kanji-deco {
     font-family: serif;
     font-size: 28px;
-    color: rgba(169,17,16,0.3);
+    color: #CC1110;
+    opacity: 0.4;
     line-height: 1;
 }
-
 .footer-kanji { 
     font-size: 20px;
-     color: var(--crimson);
-      opacity: 0.7; 
+    color: var(--crimson);
+    opacity: 1;
 }
-
 /* animasyonlar */
 .fade-in {
     opacity: 0;
@@ -591,6 +583,6 @@ nav {
 
 @media (max-width: 480px) {
     .logo-text { font-size: 17px; letter-spacing: 0.05em; }
-    .logo-kanji { font-size: 11px; }
+    .footer-kanji { font-size: 11px; }
     .mobile-nav-link { font-size: 22px; }
 }

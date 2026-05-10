@@ -108,10 +108,13 @@
     border-radius: 50%;
     font-size: 26px;
     cursor: pointer;
-    opacity: 0;
+    opacity: 0.6;
     transition: all 0.3s ease;
     z-index: 20;
     backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider-container:hover .slider-btn {
