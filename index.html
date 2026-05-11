@@ -6,32 +6,22 @@
     <meta name="description" content="AKIRA - Geleneksel Japon yemekleri">
     <title>Akira</title>
 
-    <!-- Google Fonts: önce bağlan, sonra async yükle -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap">
 
     <!-- LCP görseli önceden yükle -->
-    <<!-- Bu zaten var, doğru — ama slider JS ilk slide'ı göstermiyorsa işe yaramıyor -->
     <link rel="preload" as="image" href="images/Restorant1.webp" fetchpriority="high">
 
     <!-- Kritik font önceden yükle -->
-     
     <link rel="preload" as="font" type="font/woff2" href="fonts/The_Seasons_Bold.woff2" crossorigin>
-    <!-- CSS async yükle - render blocking önlenir -->
-    <!-- ÖNCE (CLS'e neden oluyor) -->
-    <link rel="preload" href="css/genel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="css/anasayfa.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-    <!-- SONRA (render blocking ama CLS sıfır) -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/genel.css">
     <link rel="stylesheet" href="css/anasayfa.css">
 </head>
 <body class="ana-sayfa">
-    
 
 <div class="loader-container" id="siteLoader">
     <img src="images/loading.webp" alt="Yükleniyor..." class="koi-loader" width="500" height="500">
@@ -104,36 +94,36 @@
             <h1 class="hero-title">Japon Mutfaklarının Sanatını Deneyin</h1>
 
             <div class="slider-container fade-in delay-2">
-            <div class="slider-wrapper" id="sliderWrapper">
-                <div class="slide active">
-                    <img src="images/Restorant1.webp" alt="Akira İç Mekan 1" 
-                        width="1200" height="800" fetchpriority="high" decoding="sync">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="slide active">
+                        <img src="images/Restorant1.webp" alt="Akira İç Mekan 1"
+                            width="1200" height="800" fetchpriority="high" decoding="sync">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Restorant2.webp" alt="Akira İç Mekan 2"
+                            width="1200" height="800" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Restorant4.webp" alt="Akira İç Mekan 4"
+                            width="1920" height="1200" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5"
+                            width="1920" height="1200" loading="lazy" decoding="async">
+                    </div>
                 </div>
-                <div class="slide">
-                    <img src="images/Restorant2.webp" alt="Akira İç Mekan 2" 
-                        width="1200" height="800" loading="lazy" decoding="async">
-                </div>
-                <div class="slide">
-                    <img src="images/Restorant4.webp" alt="Akira İç Mekan 4" 
-                        width="1920" height="1200" loading="lazy" decoding="async">
-                </div>
-                <div class="slide">
-                    <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5" 
-                        width="1920" height="1200" loading="lazy" decoding="async">
-                </div>
-            </div>  <!-- slider-wrapper kapandı -->
                 <button class="slider-btn next">&#10095;</button>
                 <button class="slider-btn prev">&#10094;</button>
             </div>
         </div>
     </section>
 
-   <section id="about" class="about-section">
+    <section id="about" class="about-section">
         <div class="chef-board fade-in">
             <div class="chef-board-inner">
-                <figure class="chef-image-box"> 
+                <figure class="chef-image-box">
                     <img src="images/chef.webp" alt="Executive Chef" class="chef-img" width="379" height="526" loading="lazy">
-                    </figure>
+                </figure>
             </div>
             <div class="chef-board-shadow"></div>
         </div>
@@ -214,31 +204,10 @@
     <div class="map-scene">
         <img src="images/torii.webp" class="torii-overlay" alt="Torii Kapısı" loading="lazy">
         <div class="map-container" id="mapContainer">
-            <div id="mapPlaceholder" style="width:100%;height:100%;background:#e8e0d5;display:flex;align-items:center;justify-content:center;">
-                <span style="font-family:serif;color:#A91110;font-size:15px;letter-spacing:0.1em;">⬤</span>
+            <div class="map-placeholder" id="mapPlaceholder">
+                <span class="map-placeholder-dot">⬤</span>
             </div>
         </div>
-
-        <script>
-        (function(){
-            var MAP_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.624484676938!2d35.51097782893328!3d38.70733394913525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b0d34173898ed%3A0x910da020568bd0b8!2sJoe%20Sushi%20Bar!5e0!3m2!1sen!2str!4v1778265478531!5m2!1sen!2str";
-            var container = document.getElementById('mapContainer');
-            var observer = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) {
-                    var iframe = document.createElement('iframe');
-                    iframe.src = MAP_SRC;
-                    iframe.style.cssText = 'width:100%;height:100%;border:0;';
-                    iframe.allowFullscreen = true;
-                    iframe.title = "Akira Restoran Konumu";
-                    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
-                    container.innerHTML = '';
-                    container.appendChild(iframe);
-                    observer.disconnect();
-                }
-            }, { rootMargin: '200px' });
-            observer.observe(container);
-        })();
-        </script>
     </div>
 
     <section id="contact" class="contact-section">
@@ -268,8 +237,10 @@
 
         <div class="contact-form-wrapper fade-in delay-2">
             <form class="contact-form" action="#" method="post" onsubmit="handleSubmit(event)">
-                
-                <fieldset style="border: none; padding: 0; margin: 0;"> <legend style="display: none;">Müşteri Bilgileri</legend> <div class="form-row">
+
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Müşteri Bilgileri</legend>
+                    <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="adSoyad">AD SOYAD</label>
                             <input type="text" id="adSoyad" name="adSoyad" class="form-input" placeholder="Ad Soyad" required>
@@ -281,9 +252,9 @@
                     </div>
                 </fieldset>
 
-                <fieldset style="border: none; padding: 0; margin: 0; margin-top: 20px;">
-                    <legend style="display: none;">Rezervasyon Detayları</legend>
-                    
+                <fieldset class="form-fieldset form-fieldset--rezervasyon">
+                    <legend class="form-legend">Rezervasyon Detayları</legend>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="tarih">TARİH</label>
@@ -302,7 +273,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 24px;">
+                    <div class="form-group form-group--message">
                         <label class="form-label" for="mesaj">MESAJINIZ</label>
                         <textarea id="mesaj" name="mesaj" class="form-input form-textarea" placeholder="Özel istekleriniz..."></textarea>
                     </div>

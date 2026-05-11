@@ -1,61 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AKIRA - Menü">
     <title>Akira - Menü</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
-    <link rel="preload" href="css/genel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="css/menu.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/genel.css">
     <link rel="stylesheet" href="css/menu.css">
-    </noscript>
-    <style>
-        .loader-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #FFE7D5; /* Sitenin arka plan rengi */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        .koi-loader {
-            width: 200px;
-            height: 200px;
-            animation: spin 3s linear infinite;
-            transform-origin: 48% 50%; /* Yalpalama ayarını buraya da yaz */
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .loader-container.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-    </style>
-
-    <link rel="stylesheet" href="css/genel.css">
 </head>
 <body class="menu-page">
-    <div class="loader-container" id="siteLoader">
-    <img src="images/loading.webp" alt="Yükleniyor..." class="koi-loader" fetchpriority="high" loading="eager" decoding="sync" >
+
+<div class="loader-container" id="siteLoader">
+    <img src="images/loading.webp" alt="Yükleniyor..." class="koi-loader" fetchpriority="high" loading="eager" decoding="sync">
 </div>
 
 <nav>
@@ -107,374 +70,377 @@
         <span></span>
     </button>
 </nav>
-<main>  <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html" class="mobile-nav-link">ANA SAYFA</a>
-            <a href="index.html#about" class="mobile-nav-link">HAKKIMIZDA</a>
-            <a href="index.html#contact" class="mobile-nav-link">İLETİŞİM</a>
-            <a href="menu.html" class="mobile-nav-link active">MENÜ</a>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-nav-link">ANA SAYFA</a>
+    <a href="index.html#about" class="mobile-nav-link">HAKKIMIZDA</a>
+    <a href="index.html#contact" class="mobile-nav-link">İLETİŞİM</a>
+    <a href="menu.html" class="mobile-nav-link active">MENÜ</a>
+</div>
+
+<main>
+    <section class="menu-section">
+        <div class="menu-header">
+            <span class="menu-subtitle">JAPONYA'NIN TÜM LEZZETLERİ TEK MASADA</span>
+            <h1 class="menu-title">GELENEKSEL MUTFAĞIMIZ</h1>
         </div>
 
-        <section class="menu-section">
-            <div class="menu-header">
-                <span class="menu-subtitle">JAPONYA'NIN TÜM LEZZETLERİ TEK MASADA</span>
-                <h1 class="menu-title">GELENEKSEL MUTFAĞIMIZ</h1>
-            </div>
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">HEPSİ</button>
+            <button class="filter-btn" data-filter="sushi">SUSHI & SASHIMI</button>
+            <button class="filter-btn" data-filter="ramen">RAMEN & ERİŞTE</button>
+            <button class="filter-btn" data-filter="tempura">TEMPURA & KIZARTMA</button>
+            <button class="filter-btn" data-filter="baslangic">BAŞLANGIÇLAR</button>
+            <button class="filter-btn" data-filter="tatli">TATLILAR</button>
+            <button class="filter-btn" data-filter="icecek">İÇECEKLER</button>
+        </div>
 
-            <div class="menu-filters">
-                <button class="filter-btn active" data-filter="all">HEPSİ</button>
-                <button class="filter-btn" data-filter="sushi">SUSHI & SASHIMI</button>
-                <button class="filter-btn" data-filter="ramen">RAMEN & ERİŞTE</button>
-                <button class="filter-btn" data-filter="tempura">TEMPURA & KIZARTMA</button>
-                <button class="filter-btn" data-filter="baslangic">BAŞLANGIÇLAR</button>
-                <button class="filter-btn" data-filter="tatli">TATLILAR</button>
-                <button class="filter-btn" data-filter="icecek">İÇECEKLER</button>
-            </div>
+        <div class="menu-grid">
 
-            <div class="menu-grid">
-
-                <article class="menu-item full-width-style" id="item-sushi-platter" data-category="sushi">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/sushi-platter.webp" alt="Sushi Platter" class="placeholder-img" fetchpriority="high">
+            <article class="menu-item full-width-style" id="item-sushi-platter" data-category="sushi">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/sushi-platter.webp" alt="Sushi Platter" class="placeholder-img" fetchpriority="high">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">SUSHI PLATTER</h2>
+                            <span class="item-price">₺520</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">SUSHI PLATTER</h2>
-                                <span class="item-price">₺520</span>
-                            </div>
-                            <div class="item-details">
-                                <p>3 Maguro, 3 Somon, 2 Ebi, 2 Levrek, 2 Uskumru / Soya Sosu, Wasabi ve Zencefil Turşusu ile servis edilmektedir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>3 Maguro, 3 Somon, 2 Ebi, 2 Levrek, 2 Uskumru / Soya Sosu, Wasabi ve Zencefil Turşusu ile servis edilmektedir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-somon-nigiri" data-category="sushi">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/nigiri-sushi.webp" alt="Somon Nigiri" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-somon-nigiri" data-category="sushi">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/nigiri-sushi.webp" alt="Somon Nigiri" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">SOMON NİGİRİ</h2>
+                            <span class="item-price">₺380</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">SOMON NİGİRİ</h2>
-                                <span class="item-price">₺380</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Samurai Sos, Teriyaki Sos, Goma wakame, susam (Pürmüzlenmiş)</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Samurai Sos, Teriyaki Sos, Goma wakame, susam (Pürmüzlenmiş)</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-tonkotsu-ramen" data-category="ramen">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/tonkotsu-ramen.webp" alt="Tonkotsu Ramen" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-tonkotsu-ramen" data-category="ramen">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/tonkotsu-ramen.webp" alt="Tonkotsu Ramen" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">TONKOTSU RAMEN</h2>
+                            <span class="item-price">₺450</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">TONKOTSU RAMEN</h2>
-                                <span class="item-price">₺450</span>
-                            </div>
-                            <div class="item-details">
-                                <p>İnce ramen erişteleri, chashu eti, ağaç kulağı mantarı ve ajitama yumurtası ile.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>İnce ramen erişteleri, chashu eti, ağaç kulağı mantarı ve ajitama yumurtası ile.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-shoyu-ramen" data-category="ramen">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/shoyu-ramen.webp" alt="Shoyu Ramen" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-shoyu-ramen" data-category="ramen">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/shoyu-ramen.webp" alt="Shoyu Ramen" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">SHOYU RAMEN</h2>
+                            <span class="item-price">₺420</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">SHOYU RAMEN</h2>
-                                <span class="item-price">₺420</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Kıvırcık erişteler, chashu (domuz eti), haşlanmış yumurta, bambu filizi ve taze soğanla servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Kıvırcık erişteler, chashu (domuz eti), haşlanmış yumurta, bambu filizi ve taze soğanla servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-udon-soup" data-category="ramen">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/udon-soup.webp" alt="Udon Noodle Soup" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-udon-soup" data-category="ramen">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/udon-soup.webp" alt="Udon Noodle Soup" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">UDON NOODLE SOUP</h2>
+                            <span class="item-price">₺360</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">UDON NOODLE SOUP</h2>
-                                <span class="item-price">₺360</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Kalın buğday erişteleri, geleneksel et suyu ve taze soğan ile sıcak servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Kalın buğday erişteleri, geleneksel et suyu ve taze soğan ile sıcak servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-shrimp-tempura" data-category="tempura">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/shrimp-tempura.webp" alt="Shrimp Tempura" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-shrimp-tempura" data-category="tempura">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/shrimp-tempura.webp" alt="Shrimp Tempura" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">SHRIMP TEMPURA</h2>
+                            <span class="item-price">₺420</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">SHRIMP TEMPURA</h2>
-                                <span class="item-price">₺420</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Kızartılmış karides yanında soslarla birlikte servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Kızartılmış karides yanında soslarla birlikte servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-gyoza" data-category="tempura">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/gyoza.webp" alt="Gyoza" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-gyoza" data-category="tempura">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/gyoza.webp" alt="Gyoza" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">GYOZA</h2>
+                            <span class="item-price">₺280</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">GYOZA</h2>
-                                <span class="item-price">₺280</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Asya sebzeli dana kıymalı buharda japon mantısı, gyoza sos ile.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Asya sebzeli dana kıymalı buharda japon mantısı, gyoza sos ile.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-takoyaki" data-category="tempura">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/takoyaki.webp" alt="Takoyaki" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-takoyaki" data-category="tempura">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/takoyaki.webp" alt="Takoyaki" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">TAKOYAKI</h2>
+                            <span class="item-price">₺300</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">TAKOYAKI</h2>
-                                <span class="item-price">₺300</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Hamurun içi küçük parçalara kesilmiş ahtapot, tempura artıkları, zencefil turşusu ve taze soğan ile doludur.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Hamurun içi küçük parçalara kesilmiş ahtapot, tempura artıkları, zencefil turşusu ve taze soğan ile doludur.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-chicken-katsu-curry" data-category="ana">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/chicken-katsu-curry.webp" alt="Chicken Katsu Curry" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-chicken-katsu-curry" data-category="ana">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/chicken-katsu-curry.webp" alt="Chicken Katsu Curry" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">CHICKEN KATSU CURRY</h2>
+                            <span class="item-price">₺480</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">CHICKEN KATSU CURRY</h2>
-                                <span class="item-price">₺480</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Panko kaplı çıtır tavuk fileto, Japon kori sosu haşlanmış pirinç ile servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Panko kaplı çıtır tavuk fileto, Japon kori sosu haşlanmış pirinç ile servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-teriyaki" data-category="ana">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/ızgara-teriyaki.webp" alt="Izgara Teriyaki" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-teriyaki" data-category="ana">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/ızgara-teriyaki.webp" alt="Izgara Teriyaki" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">IZGARA TERİYAKİ</h2>
+                            <span class="item-price">₺440</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">IZGARA TERİYAKİ</h2>
-                                <span class="item-price">₺440</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Teriyaki sosuyla terbiye edilmiş tavuk şiş.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Teriyaki sosuyla terbiye edilmiş tavuk şiş.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-miso-soup" data-category="baslangic">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/miso-soup.webp" alt="Miso Soup" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-miso-soup" data-category="baslangic">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/miso-soup.webp" alt="Miso Soup" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">MİSO SOUP</h2>
+                            <span class="item-price">₺220</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">MİSO SOUP</h2>
-                                <span class="item-price">₺220</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Miso sos, tofu, yosun, yeşil soğan.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Miso sos, tofu, yosun, yeşil soğan.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-edamame" data-category="baslangic">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/edamame.webp" alt="Edamame" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-edamame" data-category="baslangic">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/edamame.webp" alt="Edamame" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">EDAMAME</h2>
+                            <span class="item-price">₺200</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">EDAMAME</h2>
-                                <span class="item-price">₺200</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Buharda pişirilmiş taze soya fasulyesi.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Buharda pişirilmiş taze soya fasulyesi.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-matcha-mochi" data-category="tatli">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/matcha-mochi.webp" alt="Matcha Mochi" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-matcha-mochi" data-category="tatli">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/matcha-mochi.webp" alt="Matcha Mochi" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">MATCHA MOCHİ</h2>
+                            <span class="item-price">₺240</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">MATCHA MOCHİ</h2>
-                                <span class="item-price">₺240</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Matcha aromalı pirinç unundan yapılan japon tatlısı çilek sosu ve taze nane ile servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Matcha aromalı pirinç unundan yapılan japon tatlısı çilek sosu ve taze nane ile servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-dango" data-category="tatli">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/dango.webp" alt="Dango" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-dango" data-category="tatli">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/dango.webp" alt="Dango" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">DANGO</h2>
+                            <span class="item-price">₺220</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">DANGO</h2>
-                                <span class="item-price">₺220</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Pirinç unu (Mochiko), su ve şekerden yapılan geleneksel bir Japon tatlısıdır. Kavrulmuş kinako tozu ile servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Pirinç unu (Mochiko), su ve şekerden yapılan geleneksel bir Japon tatlısıdır. Kavrulmuş kinako tozu ile servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-japanese-puding" data-category="tatli">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/japanese-puding.webp" alt="Japanese Pudding" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-japanese-puding" data-category="tatli">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/japanese-puding.webp" alt="Japanese Pudding" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">JAPANESE PUDİNG</h2>
+                            <span class="item-price">₺240</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">JAPANESE PUDİNG</h2>
-                                <span class="item-price">₺240</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Pürin olarak telaffuz edilen geleneksel karameli Japon pudingi.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Pürin olarak telaffuz edilen geleneksel karameli Japon pudingi.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-nigori-sake" data-category="icecek">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/bulutlu-sake.webp" alt="Nigori Sake" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-nigori-sake" data-category="icecek">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/bulutlu-sake.webp" alt="Nigori Sake" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">NİGORİ SAKE</h2>
+                            <span class="item-price">₺260</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">NİGORİ SAKE</h2>
-                                <span class="item-price">₺260</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Pirinç tortularının süzülmeyip bulanık bırakıldığı meyvemsi aromasıyla bilinen alkollü içki.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Pirinç tortularının süzülmeyip bulanık bırakıldığı meyvemsi aromasıyla bilinen alkollü içki.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-umeshu" data-category="icecek">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/umeshu.webp" alt="Umeshu" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-umeshu" data-category="icecek">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/umeshu.webp" alt="Umeshu" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">UMESHU</h2>
+                            <span class="item-price">₺240</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">UMESHU</h2>
-                                <span class="item-price">₺240</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Japon erik likorü.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Japon erik likorü.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-yuzu-cocktail" data-category="icecek">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/yuzu.webp" alt="Yuzu Cocktail" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-yuzu-cocktail" data-category="icecek">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/yuzu.webp" alt="Yuzu Cocktail" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">YUZU COCKTAİL</h2>
+                            <span class="item-price">₺300</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">YUZU COCKTAİL</h2>
-                                <span class="item-price">₺300</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Cin ve votka ile birleştirilen limon nane ve soda ile servis edilir.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Cin ve votka ile birleştirilen limon nane ve soda ile servis edilir.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-ramune" data-category="icecek">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/ramune.webp" alt="Ramune" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-ramune" data-category="icecek">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/ramune.webp" alt="Ramune" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">RAMUNE</h2>
+                            <span class="item-price">₺200</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">RAMUNE</h2>
-                                <span class="item-price">₺200</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Geleneksel japon gazozu portakal veya sade çeşitleri arasında tercih yapabilirsiniz.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Geleneksel japon gazozu portakal veya sade çeşitleri arasında tercih yapabilirsiniz.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="menu-item full-width-style" id="item-sencha" data-category="icecek">
-                    <div class="item-inner">
-                        <div class="item-img-wrapper">
-                            <img src="images/sencha-çayı.webp" alt="Sencha Çayı" class="placeholder-img" loading="lazy">
+            <article class="menu-item full-width-style" id="item-sencha" data-category="icecek">
+                <div class="item-inner">
+                    <div class="item-img-wrapper">
+                        <img src="images/sencha-çayı.webp" alt="Sencha Çayı" class="placeholder-img" loading="lazy">
+                    </div>
+                    <div class="item-text-wrapper">
+                        <div class="item-front">
+                            <h2 class="item-name">SENCHA ÇAYI</h2>
+                            <span class="item-price">₺200</span>
                         </div>
-                        <div class="item-text-wrapper">
-                            <div class="item-front">
-                                <h2 class="item-name">SENCHA ÇAYI</h2>
-                                <span class="item-price">₺200</span>
-                            </div>
-                            <div class="item-details">
-                                <p>Geleneksel japon yeşil çayı.</p>
-                            </div>
+                        <div class="item-details">
+                            <p>Geleneksel japon yeşil çayı.</p>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-            </div>
-        </section>
+        </div>
+    </section>
 </main>
+
 <footer class="site-footer">
     <div class="site-footer-top">
         <div class="site-footer-brand">
@@ -530,6 +496,7 @@
     </div>
 </footer>
 
+<script src="js/mobil.js" defer></script>
 <script src="js/menu.js" defer></script>
 <script src="js/search.js" defer></script>
 </body>

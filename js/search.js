@@ -4,32 +4,32 @@ var SEARCH_INDEX = [
     { title: 'Rezervasyon & İletişim', desc: 'Tokyo Shinjuku rezervasyon telefon e-posta çalışma saatleri',                url: 'index.html#contact',            icon: '📞', img: null,                            tag: 'Sayfa' },
     { title: 'Menü',                   desc: 'Tüm yemekler içecekler tatlılar sushi ramen tempura',                        url: 'menu.html',                     icon: '📋', img: null,                            tag: 'Sayfa' },
 
-    { title: 'Sushi Platter',          desc: 'Somon orkinos karides nigiri maki rulo wasabi zencefil ₺520',                url: 'menu.html#item-sushi-platter',  img: 'images/sushi-platter.jpg',              tag: 'Sushi & Sashimi' },
-    { title: 'Somon Nigiri',           desc: 'Taze Atlantik somonu beş adet nigiri yuzu sosu filiz ₺380',                  url: 'menu.html#item-somon-nigiri',   img: 'images/nigiri-sushi.jpg',               tag: 'Sushi & Sashimi' },
+    { title: 'Sushi Platter',          desc: 'Somon orkinos karides nigiri maki rulo wasabi zencefil ₺520',                url: 'menu.html#item-sushi-platter',  img: 'images/sushi-platter.webp',              tag: 'Sushi & Sashimi' },
+    { title: 'Somon Nigiri',           desc: 'Taze Atlantik somonu beş adet nigiri yuzu sosu filiz ₺380',                  url: 'menu.html#item-somon-nigiri',   img: 'images/nigiri-sushi.webp',               tag: 'Sushi & Sashimi' },
 
-    { title: 'Tonkotsu Ramen',         desc: '24 saat domuz kemiği suyu chashu ağaç kulağı mantarı ajitama yumurtası ₺450', url: 'menu.html#item-tonkotsu-ramen', img: 'images/tonkotsu-ramen.jpg',            tag: 'Ramen & Erişte' },
-    { title: 'Shoyu Ramen',            desc: 'Soya sosu dashi chashu narutomaki balık keki yarım yumurta ₺420',            url: 'menu.html#item-shoyu-ramen',    img: 'images/shoyu-ramen.jpg',                tag: 'Ramen & Erişte' },
-    { title: 'Udon Noodle Soup',       desc: 'Kalın buğday erişte dashi tofu kızarmış tempura sıcak servis ₺360',          url: 'menu.html#item-udon-soup',      img: 'images/udon-soup.jpg',                  tag: 'Ramen & Erişte' },
+    { title: 'Tonkotsu Ramen',         desc: '24 saat domuz kemiği suyu chashu ağaç kulağı mantarı ajitama yumurtası ₺450', url: 'menu.html#item-tonkotsu-ramen', img: 'images/tonkotsu-ramen.webp',            tag: 'Ramen & Erişte' },
+    { title: 'Shoyu Ramen',            desc: 'Soya sosu dashi chashu narutomaki balık keki yarım yumurta ₺420',            url: 'menu.html#item-shoyu-ramen',    img: 'images/shoyu-ramen.webp',                tag: 'Ramen & Erişte' },
+    { title: 'Udon Noodle Soup',       desc: 'Kalın buğday erişte dashi tofu kızarmış tempura sıcak servis ₺360',          url: 'menu.html#item-udon-soup',      img: 'images/udon-soup.webp',                  tag: 'Ramen & Erişte' },
 
-    { title: 'Shrimp Tempura',         desc: 'Dev kaplan karidesi çıtır paneleme daikon tentsuyu sosu ₺420',              url: 'menu.html#item-shrimp-tempura', img: 'images/shrimp-tempura.jpg',             tag: 'Tempura & Kızartma' },
-    { title: 'Gyoza',                  desc: 'Domuz eti lahana kızartma Japon mantısı ponzu sosu ₺280',                    url: 'menu.html#item-gyoza',          img: 'images/gyoza.jpg',                      tag: 'Tempura & Kızartma' },
-    { title: 'Takoyaki',               desc: 'Ahtapot Osaka usulü hamur topları takoyaki sosu katsuobushi ₺300',           url: 'menu.html#item-takoyaki',       img: 'images/takoyaki.jpg',                   tag: 'Tempura & Kızartma' },
+    { title: 'Shrimp Tempura',         desc: 'Dev kaplan karidesi çıtır paneleme daikon tentsuyu sosu ₺420',              url: 'menu.html#item-shrimp-tempura', img: 'images/shrimp-tempura.webp',             tag: 'Tempura & Kızartma' },
+    { title: 'Gyoza',                  desc: 'Domuz eti lahana kızartma Japon mantısı ponzu sosu ₺280',                    url: 'menu.html#item-gyoza',          img: 'images/gyoza.webp',                      tag: 'Tempura & Kızartma' },
+    { title: 'Takoyaki',               desc: 'Ahtapot Osaka usulü hamur topları takoyaki sosu katsuobushi ₺300',           url: 'menu.html#item-takoyaki',       img: 'images/takoyaki.webp',                   tag: 'Tempura & Kızartma' },
 
-    { title: 'Chicken Katsu Curry',    desc: 'Panko kaplı tavuk Japon köri pirinç ıspanak havuç ₺480',                    url: 'menu.html#item-chicken-katsu-curry', img: 'images/chicken-katsu-curry.jpg',   tag: 'Ana Yemek' },
-    { title: 'Izgara Teriyaki',        desc: 'Teriyaki soslu tavuk şiş marine susam marul ₺440',                          url: 'menu.html#item-teriyaki',       img: 'images/ızgara-teriyaki.jpg',            tag: 'Ana Yemek' },
+    { title: 'Chicken Katsu Curry',    desc: 'Panko kaplı tavuk Japon köri pirinç ıspanak havuç ₺480',                    url: 'menu.html#item-chicken-katsu-curry', img: 'images/chicken-katsu-curry.webp',   tag: 'Ana Yemek' },
+    { title: 'Izgara Teriyaki',        desc: 'Teriyaki soslu tavuk şiş marine susam marul ₺440',                          url: 'menu.html#item-teriyaki',       img: 'images/ızgara-teriyaki.webp',            tag: 'Ana Yemek' },
 
-    { title: 'Miso Soup',              desc: 'Beyaz miso çorbası tofu deniz yosunu somon dashi ₺220',                     url: 'menu.html#item-miso-soup',      img: 'images/miso-soup.jpg',                  tag: 'Başlangıç' },
-    { title: 'Edamame',                desc: 'Buharda soya fasulyesi deniz tuzu hafif atıştırmalık ₺200',                 url: 'menu.html#item-edamame',        img: 'images/edamame.jpg',                    tag: 'Başlangıç' },
+    { title: 'Miso Soup',              desc: 'Beyaz miso çorbası tofu deniz yosunu somon dashi ₺220',                     url: 'menu.html#item-miso-soup',      img: 'images/miso-soup.webp',                  tag: 'Başlangıç' },
+    { title: 'Edamame',                desc: 'Buharda soya fasulyesi deniz tuzu hafif atıştırmalık ₺200',                 url: 'menu.html#item-edamame',        img: 'images/edamame.webp',                    tag: 'Başlangıç' },
 
-    { title: 'Matcha Mochi',           desc: 'Uji matcha tozu mochi çilek sosu nane ₺240',                               url: 'menu.html#item-matcha-mochi',   img: 'images/matcha-mochi.jpg',               tag: 'Tatlı' },
-    { title: 'Dango',                  desc: 'Pirinç unu topları soya sosu glazür kinako street food ₺220',               url: 'menu.html#item-dango',          img: 'images/dango.jpg',                      tag: 'Tatlı' },
-    { title: 'Japanese Puding',        desc: 'Kremsi karamel puding Japon usulü bitter ₺240',                             url: 'menu.html#item-japanese-puding', img: 'images/japanese-puding.jpg',           tag: 'Tatlı' },
+    { title: 'Matcha Mochi',           desc: 'Uji matcha tozu mochi çilek sosu nane ₺240',                               url: 'menu.html#item-matcha-mochi',   img: 'images/matcha-mochi.webp',               tag: 'Tatlı' },
+    { title: 'Dango',                  desc: 'Pirinç unu topları soya sosu glazür kinako street food ₺220',               url: 'menu.html#item-dango',          img: 'images/dango.webp',                      tag: 'Tatlı' },
+    { title: 'Japanese Puding',        desc: 'Kremsi karamel puding Japon usulü bitter ₺240',                             url: 'menu.html#item-japanese-puding', img: 'images/japanese-puding.webp',           tag: 'Tatlı' },
 
-    { title: 'Nigori Sake',            desc: 'Kremsi bulutlu Japon pirinç içkisi tatlı ₺260',                             url: 'menu.html#item-nigori-sake',    img: 'images/bulutlu-sake.jpg',               tag: 'İçecek' },
-    { title: 'Umeshu',                 desc: 'Japon erik likörü tatlı ekşi buz üzerinde ₺240',                            url: 'menu.html#item-umeshu',         img: 'images/umeshu.jpg',                     tag: 'İçecek' },
-    { title: 'Yuzu Cocktail',          desc: 'Yuzu suyu Japon cin salatalık ev yapımı kokteyl ₺300',                      url: 'menu.html#item-yuzu-cocktail',  img: 'images/yuzu.jpg',                       tag: 'İçecek' },
-    { title: 'Ramune',                 desc: 'Japon mermer şişeli gazlı içecek portakal aroması ₺200',                    url: 'menu.html#item-ramune',         img: 'images/ramune.jpg',                     tag: 'İçecek' },
-    { title: 'Sencha Çayı',            desc: 'Geleneksel Japon kyusu demliği yeşil çay ₺200',                             url: 'menu.html#item-sencha',         img: 'images/sencha-çayı.jpg',                tag: 'İçecek' },
+    { title: 'Nigori Sake',            desc: 'Kremsi bulutlu Japon pirinç içkisi tatlı ₺260',                             url: 'menu.html#item-nigori-sake',    img: 'images/bulutlu-sake.webp',               tag: 'İçecek' },
+    { title: 'Umeshu',                 desc: 'Japon erik likörü tatlı ekşi buz üzerinde ₺240',                            url: 'menu.html#item-umeshu',         img: 'images/umeshu.webp',                     tag: 'İçecek' },
+    { title: 'Yuzu Cocktail',          desc: 'Yuzu suyu Japon cin salatalık ev yapımı kokteyl ₺300',                      url: 'menu.html#item-yuzu-cocktail',  img: 'images/yuzu.webp',                       tag: 'İçecek' },
+    { title: 'Ramune',                 desc: 'Japon mermer şişeli gazlı içecek portakal aroması ₺200',                    url: 'menu.html#item-ramune',         img: 'images/ramune.webp',                     tag: 'İçecek' },
+    { title: 'Sencha Çayı',            desc: 'Geleneksel Japon kyusu demliği yeşil çay ₺200',                             url: 'menu.html#item-sencha',         img: 'images/sencha-çayı.webp',                tag: 'İçecek' },
 ];
 
 function searchItems(query) {
