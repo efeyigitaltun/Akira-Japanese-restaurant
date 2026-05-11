@@ -1,4 +1,4 @@
-// rezervasyon formu submit
+// Rezervasyon formu gönderilince çıkan mesaj
 function handleSubmit(e) {
     e.preventDefault();
     var msg = document.getElementById('formSuccess');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); 
             }
         });
     }, { threshold: 0.15 });
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // hamburger menü
+    // hamburger menü kısmı
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobileMenu');
 

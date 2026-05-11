@@ -1,3 +1,4 @@
+/* Hero kısmı  */
 .hero-section {
     padding-top: 90px;
     display: flex;
@@ -65,6 +66,7 @@
     color: white;
 }
 
+/* Slider kısmı */
 .slider-container {
     position: relative;
     width: 100%;
@@ -130,7 +132,7 @@
 .slider-btn.prev { left: 15px; }
 .slider-btn.next { right: 15px; }
 
-/* hakkımızda */
+/* Hakkımızda kısmı*/
 .about-section {
     position: relative;
     padding: 120px 8%;
@@ -140,7 +142,7 @@
     gap: 200px;
     z-index: 1;
 }
-
+/* Şef kartı kısmı*/
 .chef-board {
     flex: 0 0 380px;
     position: relative;
@@ -258,7 +260,7 @@
     background: rgba(23, 23, 23, 0.12);
 }
 
-/* öne çıkan */
+/* Öne çıkanlar kısmı */
 .featured-section {
     position: relative;
     padding: 100px 8%;
@@ -366,7 +368,7 @@
     margin-top: 20px;
 }
 
-/* harita */
+/* Harita kısmı */
 .map-scene {
     position: relative;
     width: 100%;
@@ -421,7 +423,7 @@
     letter-spacing: 0.1em;
 }
 
-/* iletişim */
+/* İletişim Kısmı */
 .contact-section {
     position: relative;
     padding: 100px 8% 120px 8%;
@@ -492,6 +494,7 @@
     gap: 24px;
 }
 
+/* Rezervasyon form kısmı */
 .form-row {
     display: flex;
     gap: 20px;
@@ -560,7 +563,6 @@
     transition: opacity 0.5s ease;
 }
 
-/* rezervasyon formu fieldset'leri */
 .form-fieldset {
     border: none;
     padding: 0;
@@ -578,6 +580,7 @@
 .form-group--message {
     margin-top: 24px;
 }
+/* Tablet görünüm */
 @media (max-width: 1024px) {
     .about-section {
         flex-direction: column;
@@ -604,7 +607,7 @@
         flex: none;
     }
 }
-
+/* Mobil Görünüm */
 @media (max-width: 768px) {
     .hero-section {
         padding-top: 72px;
@@ -692,6 +695,7 @@
     }
 }
 
+/* Küçük mobil görünüm */
 @media (max-width: 480px) {
     .about-title {
         font-size: 40px;

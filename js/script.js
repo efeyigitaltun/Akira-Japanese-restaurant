@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Slider kısmı
     var sliderWrapper = document.getElementById('sliderWrapper');
     var slides = document.querySelectorAll('.slide');
     var prevBtn = document.querySelector('.prev');
@@ -25,19 +26,20 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = (currentIndex - 1 + total) % total;
         goTo(currentIndex);
     }
-
+    // Görsel üstündeki buton tıklama olayı
     if (nextBtn) nextBtn.addEventListener('click', next);
     if (prevBtn) prevBtn.addEventListener('click', prev);
 
-    setInterval(next, 3500);
+    setInterval(next, 3500); // Otomatik geç
 
+    // Dokunmatik kaydırma kısmı
     sliderWrapper.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
         dragging = true;
     });
 
     sliderWrapper.addEventListener('touchmove', function(e) {
-        // boş bırakıldı
+        // Boş bıraktım çünkü sadece kaydırma yönünü kontrol ediyorum.
     });
 
     sliderWrapper.addEventListener('touchend', function(e) {
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else if (diff < -50) prev();
     });
 
+    // Klavye yön tuşları kısmı
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight') {
             next();
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+// Harita kısmı
 document.addEventListener('DOMContentLoaded', function() {
 
     var container = document.getElementById('mapContainer');

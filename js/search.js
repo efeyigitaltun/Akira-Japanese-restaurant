@@ -1,3 +1,4 @@
+// Arama fonksiyonları kısmı
 var SEARCH_INDEX = [
     { title: 'Ana Sayfa',              desc: 'Akira giriş hero slider',                                                    url: 'index.html',                    icon: '🏠', img: null,                            tag: 'Sayfa' },
     { title: 'Hakkımızda',             desc: 'Michelin mutfak felsefesi 18 yıl deneyim',                                   url: 'index.html#about',              icon: '👨‍🍳', img: null,                           tag: 'Sayfa' },
@@ -40,7 +41,7 @@ function searchItems(query) {
         return haystack.includes(q);
     }).slice(0, 7);
 }
-
+// Smooth scrollu hedef elemana götürme farklı bir sayfaysa doğrudan URL yönlendirmesi yapar.
 function navigateToResult(url) {
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
     var hashIndex = url.indexOf('#');
@@ -63,6 +64,7 @@ function navigateToResult(url) {
         window.location.href = url;
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderDropdown(searchItems(query), query);
     }
 
+    // Sonuçları dropdown olarak ekrana gösterme kısmı
     function renderDropdown(results, query) {
         dropdown.innerHTML = '';
 
@@ -133,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.add('open');
     }
 
+    // Butona tıklanınca arama yap
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         var q = searchInput.value.trim();
@@ -153,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!searchContainer.contains(e.target)) closeDropdown();
     });
 
-    // sayfa hash'le açıldıysa o elemente scroll et
     if (window.location.hash) {
         var hash = window.location.hash.slice(1);
         var el = document.getElementById(hash);
@@ -167,7 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
-// Sayfa tamamen yüklendiğinde loader ekranını yavaşça gizle
+
+// Sayfa yüklenince loader'ı gizleme kısmı 
 window.addEventListener('load', function() {
     const loader = document.getElementById('siteLoader');
     if (loader) {

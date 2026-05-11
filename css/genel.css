@@ -32,6 +32,7 @@
     box-sizing: border-box;
 }
 
+/* Scrollbar kısmı */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.25); border-radius: 99px; }
@@ -50,7 +51,7 @@ body {
     background-color: var(--cream);
 }
 
-/* Sabit Arka Plan Katmanı (Yollar güncellendi) */
+/* Sabit background */
 body::before {
     content: '';
     position: fixed;
@@ -170,6 +171,7 @@ nav {
     gap: 30px;
 }
 
+/* Arama çubuğu */
 .search-container {
     display: flex;
     align-items: center;
@@ -396,7 +398,7 @@ nav {
     margin-top: 20px;
 }
 
-/* footer */
+/* Footer kısmı */
 .site-footer {
     background: var(--ink);
     padding: 40px 8% 0 8%;
@@ -518,7 +520,7 @@ nav {
     color: var(--crimson);
     opacity: 1;
 }
-/* animasyonlar */
+/* Animasyonlar */
 .fade-in {
     opacity: 0;
     transform: translateY(40px);
@@ -544,6 +546,7 @@ nav {
     100% { box-shadow: 0 0 0 0 rgba(169, 17, 16, 0); outline: 2px solid transparent; }
 }
 
+/* Tablet görünüm */
 @media (max-width: 1024px) {
     nav { padding: 0 28px; }
     .nav-links { gap: 24px; }
@@ -551,7 +554,7 @@ nav {
     .social-links { display: none; }
     .site-footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
-
+/* Mobil görünüm */
 @media (max-width: 768px) {
     .mobile-hide { display: none !important; }
 
@@ -572,7 +575,7 @@ nav {
     section { scroll-margin-top: 64px; }
     .search-dropdown { width: 280px; right: -20px; }
 }
-
+/* Küçük mobil görünüm */
 @media (max-width: 600px) {
     .site-footer { padding: 50px 6% 0 6%; }
     .site-footer-top { grid-template-columns: 1fr; gap: 32px; text-align: center; }
@@ -580,24 +583,24 @@ nav {
     .footer-socials { justify-content: center; }
     .footer-bottom-inner { flex-direction: column; gap: 15px; text-align: center; }
 }
-
+/* Daga küçük mobil görünüm */
 @media (max-width: 480px) {
     .logo-text { font-size: 17px; letter-spacing: 0.05em; }
     .footer-kanji { font-size: 11px; }
     .mobile-nav-link { font-size: 22px; }
 }
-/* --- KOI LOADER EKRANI (ORTAK) --- */
+/* Loader kısmı */
 .loader-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #f8f5f0; /* Sitenin temasına uygun fildişi arka plan */
+  background-color: #f8f5f0; 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Navigasyon dahil her şeyin üzerinde durur */
+  z-index: 9999;  /* Katman olarak en üstte */
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -613,7 +616,7 @@ nav {
   100% { transform: rotate(360deg); }
 }
 
-/* Sayfa yüklendiğinde JS tarafından tetiklenecek gizleme class'ı */
+/* JS tarafından tetiklenmesi için gizli class */
 .loader-container.hidden {
   opacity: 0;
   visibility: hidden;

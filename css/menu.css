@@ -1,4 +1,4 @@
-/* Menü Sayfası Sabit Arka Planı (Klasör yolu güncellendi) */
+/* Sabit background */
 body.menu-page::before {
     content: '';
     position: fixed;
@@ -50,7 +50,7 @@ body.menu-page {
     margin: 0;
 }
 
-/* Kategori Filtreleri - Mobil Uyumlulaştırılmış */
+/* Kategori filtreleri */
 .menu-filters {
     display: flex;
     justify-content: center;
@@ -181,8 +181,7 @@ body.menu-page {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobil Görünüm İyileştirmeleri */
-/* Mobil Görünüm İyileştirmeleri */
+/* Mobil Görünüm */
 @media (max-width: 768px) {
     .menu-section {
         padding-top: 90px;

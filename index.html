@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Meta etiketleri kısmı -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AKIRA - Geleneksel Japon yemekleri">
     <title>Akira</title>
 
-    <!-- Google Fonts -->
+    <!-- Google fontları -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap">
 
-    <!-- LCP görseli önceden yükle -->
+    <!-- Görseli öncelikli yükle -->
     <link rel="preload" as="image" href="images/Restorant1.webp" fetchpriority="high">
 
-    <!-- Kritik font önceden yükle -->
+    <!-- Önemli font öncelikli yükle -->
     <link rel="preload" as="font" type="font/woff2" href="fonts/The_Seasons_Bold.woff2" crossorigin>
 
-    <!-- CSS -->
+    <!-- CSS bağlama -->            
     <link rel="stylesheet" href="css/genel.css">
     <link rel="stylesheet" href="css/anasayfa.css">
 </head>
@@ -70,7 +71,7 @@
             </a>
         </div>
     </div>
-
+    <!-- hamburger menü --> 
     <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
         <span></span>
         <span></span>
@@ -96,19 +97,19 @@
             <div class="slider-container fade-in delay-2">
                 <div class="slider-wrapper" id="sliderWrapper">
                     <div class="slide active">
-                        <img src="images/Restorant1.webp" alt="Akira İç Mekan 1"
+                        <img src="images/Restorant1.webp" alt="Restoran Fotoğraf 1"
                             width="1200" height="800" fetchpriority="high" decoding="sync">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant2.webp" alt="Akira İç Mekan 2"
+                        <img src="images/Restorant2.webp" alt="Restoran Fotoğraf 2"
                             width="1200" height="800" loading="lazy" decoding="async">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant4.webp" alt="Akira İç Mekan 4"
+                        <img src="images/Restorant4.webp" alt="Restoran Fotoğraf 3"
                             width="1920" height="1200" loading="lazy" decoding="async">
                     </div>
                     <div class="slide">
-                        <img src="images/Restorant5.webp" class="object-custom" alt="Akira İç Mekan 5"
+                        <img src="images/Restorant5.webp" class="object-custom" alt="Restoran Fotoğraf 4"
                             width="1920" height="1200" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -122,7 +123,7 @@
         <div class="chef-board fade-in">
             <div class="chef-board-inner">
                 <figure class="chef-image-box">
-                    <img src="images/chef.webp" alt="Executive Chef" class="chef-img" width="379" height="526" loading="lazy">
+                    <img src="images/chef.webp" alt="Chef" class="chef-img" width="379" height="526" loading="lazy">
                 </figure>
             </div>
             <div class="chef-board-shadow"></div>
@@ -200,16 +201,16 @@
             <a href="menu.html" class="btn-secondary">TÜM MENÜYÜ İNCELE</a>
         </div>
     </section>
-
+    <!-- Tori kapısı --> 
     <div class="map-scene">
-        <img src="images/torii.webp" class="torii-overlay" alt="Torii Kapısı" loading="lazy">
+        <img src="images/torii.webp" class="torii-overlay" alt="Tori Kapısı" loading="lazy">
         <div class="map-container" id="mapContainer">
             <div class="map-placeholder" id="mapPlaceholder">
                 <span class="map-placeholder-dot">⬤</span>
             </div>
         </div>
     </div>
-
+    <!-- Rezervasyon form --> 
     <section id="contact" class="contact-section">
         <div class="contact-info fade-in">
             <span class="about-tag">BİZE ULAŞIN</span>
@@ -275,18 +276,18 @@
 
                     <div class="form-group form-group--message">
                         <label class="form-label" for="mesaj">MESAJINIZ</label>
-                        <textarea id="mesaj" name="mesaj" class="form-input form-textarea" placeholder="Mesajınızı buraya yazın...s"></textarea>
+                        <textarea id="mesaj" name="mesaj" class="form-input form-textarea" placeholder="Mesajınızı buraya yazın..."></textarea>
                     </div>
                 </fieldset>
 
                 <button type="submit" class="btn-primary form-submit">REZERVASYON TALEP ET</button>
-                <p class="form-success" id="formSuccess">Talebiniz alındı — en kısa sürede dönüş yapılacaktır.</p>
+                <p class="form-success" id="formSuccess">Talebiniz alındı. En kısa sürede dönüş yapılacaktır.</p>
             </form>
         </div>
     </section>
 
 </main>
-
+<!-- footer --> 
 <footer class="site-footer">
     <div class="site-footer-top">
         <div class="site-footer-brand">
@@ -341,7 +342,7 @@
         </div>
     </div>
 </footer>
-
+<!-- JS bağlama --> 
 <script src="js/mobil.js" defer></script>
 <script src="js/script.js" defer></script>
 <script src="js/search.js" defer></script>

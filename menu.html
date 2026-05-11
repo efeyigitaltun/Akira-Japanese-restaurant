@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Meta etiketleri kısmı-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AKIRA - Menü">
@@ -34,6 +35,7 @@
         <img src="images/akira-logo.webp" alt="Akira Logo" class="logo-img" width="216" height="72">
     </a>
 
+    <!-- Arama ve sosyal medya bağlantıları kısmı-->
     <div class="nav-right">
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Ara...">
@@ -72,6 +74,7 @@
     </button>
 </nav>
 
+<!-- Hamburger menü kısmı-->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" class="mobile-nav-link">ANA SAYFA</a>
     <a href="index.html#about" class="mobile-nav-link">HAKKIMIZDA</a>
@@ -95,13 +98,14 @@
             <button class="filter-btn" data-filter="tatli">TATLILAR</button>
             <button class="filter-btn" data-filter="icecek">İÇECEKLER</button>
         </div>
-
+        
+        <!-- Yemek listesi -->
         <div class="menu-grid">
 
             <article class="menu-item full-width-style" id="item-sushi-platter" data-category="sushi">
                 <div class="item-inner">
                     <div class="item-img-wrapper">
-                        <img src="images/sushi-platter.webp" alt="Sushi Platter" class="placeholder-img" fetchpriority="high">
+                        <img src="images/sushi-platter.webp" alt="Sushi Platter" class="placeholder-img" fetchpriority="high"> <!-- Görseli öncelikli yükle-->
                     </div>
                     <div class="item-text-wrapper">
                         <div class="item-front">
@@ -496,7 +500,7 @@
         </div>
     </div>
 </footer>
-
+<!-- JS Bağlama -->
 <script src="js/mobil.js" defer></script>
 <script src="js/menu.js" defer></script>
 <script src="js/search.js" defer></script>

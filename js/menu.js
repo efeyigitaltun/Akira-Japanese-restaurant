@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     filterBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
 
-            // aktif class'ı sıfırla
+            // butonu sıfırla ve aktif yap
             filterBtns.forEach(function(b) { b.classList.remove('active'); });
             btn.classList.add('active');
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (filter === 'all' || item.dataset.category === filter) {
                     item.style.display = 'block';
                     item.style.animation = 'none';
-                    item.offsetHeight; // reflow
+                    item.offsetHeight; // Animasyonu yeniden tetiklemek için (reflow)
                     item.style.animation = 'filterFadeIn 0.35s ease forwards';
                 } else {
                     item.style.display = 'none';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // hamburger
+    // hamburger menü kısmı
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobileMenu');
 
