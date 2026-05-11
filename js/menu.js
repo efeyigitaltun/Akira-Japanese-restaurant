@@ -25,22 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // hamburger menü kısmı
-    var hamburger = document.getElementById('hamburger');
-    var mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', function() {
-        var isOpen = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(function(link) {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('open');
-            hamburger.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-    });
-
+ß
 });
