@@ -1,14 +1,23 @@
 AKIRA - Japon Restoranı
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://osmanbabayigit.github.io/Japanese-restaurant/)
+[![GitHub Pages](https://img.shields.io/badge/Deployed_on-GitHub_Pages-blue?logo=github)](https://osmanbabayigit.github.io/Japanese-restaurant/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+Canlı demo: **[osmanbabayigit.github.io/Japanese-restaurant](https://osmanbabayigit.github.io/Japanese-restaurant/)**
 
 Proje Hakkında:
 Japon mutfağının zarafetini ve sadeliğini dijital dünyaya yansıtmak amacıyla tasarlanmış modern bir web projesidir. 
 Proje; özgün marka kimliği, dikkatle seçilmiş tipografi (özel Türkçe karakter destekli *The Seasons* font entegrasyonu) ve kullanıcı dostu arayüz tasarımı ile ön plana çıkmaktadır.
 
 Desktop version:
+
 <img width="1856" height="913" alt="menu" src="https://github.com/user-attachments/assets/bb284c0c-00f5-4350-a5dd-f97f1f329905" />
 <img width="1859" height="844" alt="şef" src="https://github.com/user-attachments/assets/20a78bdf-b34d-4c53-97a8-287e0460855f" />
 <img width="1862" height="911" alt="anasayfa" src="https://github.com/user-attachments/assets/77d5268f-0a92-4ed2-b002-2588cadf63d8" />
 Mobile version:
+
 <img width="540" height="1114" alt="mobile3" src="https://github.com/user-attachments/assets/4d25f2e6-27d4-4338-984a-0914bab64891" />
 <img width="540" height="1114" alt="mobile2" src="https://github.com/user-attachments/assets/97b88f5e-40c1-4144-b4d5-3f90ca36efc4" />
 <img width="540" height="1111" alt="mobile1" src="https://github.com/user-attachments/assets/ab445769-f4fb-4c28-b3fa-9049c8ed6c5b" />
